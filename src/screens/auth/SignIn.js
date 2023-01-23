@@ -5,6 +5,7 @@ import {
   TextInput,
   StyleSheet,
   TouchableOpacity,
+  ScrollView,
 } from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
 import Logo from '../../components/Logo';
@@ -39,7 +40,7 @@ const SignIn = ({navigation}) => {
   };
 
   return (
-    <View style={g_styles.container}>
+    <ScrollView style={g_styles.container}>
       <View style={g_styles.box}>
         {/* Logo */}
         <View style={g_styles.mt_70}>
@@ -99,7 +100,7 @@ const SignIn = ({navigation}) => {
           </View>
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
