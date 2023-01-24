@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   ScrollView,
   Platform,
-  SafeAreaView
+  SafeAreaView,
 } from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
 
@@ -175,7 +175,7 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 20,
     fontSize: 16,
-    paddingVertical: Platform.OS === 'ios' ? 15:10
+    paddingVertical: Platform.OS === 'ios' ? 15 : 10,
   },
   rememberView: {
     flexDirection: 'row',
@@ -184,8 +184,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   rememberCheckBox: {
-    marginLeft: Platform.OS === 'ios' ? 10:0,
-    marginRight: Platform.OS === 'ios' ? 20: 0
+    marginLeft: Platform.OS === 'ios' ? 10 : 0,
+    marginRight: Platform.OS === 'ios' ? 20 : 0,
   },
   rememberText: {
     color: softGray,
