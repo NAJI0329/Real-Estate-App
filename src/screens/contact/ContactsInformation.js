@@ -117,6 +117,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   btnStyle: {
-    flex: Platform.OS === 'ios' ? 0.17:0.13
-  }
+    flex: Platform.OS === 'ios' ? 0.17 : 0.13,
+  },
 });
