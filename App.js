@@ -109,6 +109,11 @@ const App = () => {
     // },
 
     {
+      name: 'ContactsInformation',
+      component: ContactsInformation,
+      options: verticalAnimation,
+    },
+    {
       name: 'SignIn',
       component: SignIn,
       options: verticalAnimation,
@@ -166,11 +171,6 @@ const App = () => {
     {
       name: 'Splash',
       component: Splash,
-      options: verticalAnimation,
-    },
-    {
-      name: 'ContactsInformation',
-      component: ContactsInformation,
       options: verticalAnimation,
     },
     {
