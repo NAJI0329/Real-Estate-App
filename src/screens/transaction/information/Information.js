@@ -3,7 +3,6 @@ import {
   View,
   Text,
   StyleSheet,
-  ScrollView,
   SafeAreaView,
   FlatList,
   Platform,
@@ -101,7 +100,6 @@ const ConfirmInformation = ({navigation}) => {
       </View> */}
 
         <MainActionButton
-          style={styles.btnStyle}
           text={'Continue'}
           onPress={() => navigation.navigate('ContactList')}
         />
@@ -139,7 +137,4 @@ const styles = StyleSheet.create({
     marginTop: 25,
     marginBottom: 25,
   },
-  btnStyle: {
-    flex: Platform.OS === 'ios' ? 0.17:0.13
-  }
 });

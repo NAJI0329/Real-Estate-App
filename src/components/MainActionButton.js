@@ -1,12 +1,13 @@
 import React from 'react';
-import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
+import {Text, View, StyleSheet, TouchableOpacity, Platform} from 'react-native';
 import {color19, primaryMain, white} from '../ui/common/colors';
 
-const MainActionButton = ({text, onPress, isDisable = false, bgColor, style}) => {
+const MainActionButton = ({text, onPress, isDisable = false, bgColor}) => {
   const styles = StyleSheet.create({
     submitView: {
       padding: 15,
       paddingBottom: 40,
+      flex: Platform.OS === 'ios' ? 0.17 : 0,
     },
     submitText: {
       textAlign: 'center',
@@ -25,7 +26,7 @@ const MainActionButton = ({text, onPress, isDisable = false, bgColor, style}) =>
   });
 
   return (
-    <View style={[style, styles.submitView]}>
+    <View style={styles.submitView}>
       <TouchableOpacity
         style={[styles.submitBtn, isDisable && styles.disableButton]}
         onPress={() => {

@@ -99,7 +99,6 @@ const ContactsInformation = ({navigation}) => {
           </View>
         </ScrollView>
         <MainActionButton
-          style={styles.btnStyle}
           text={'Create Transaction'}
           isDisable={isDisable}
           onPress={() => navigation.navigate('TransactionRoom')}
@@ -115,8 +114,5 @@ const styles = StyleSheet.create({
   view: {},
   middle_view: {
     flex: 1,
-  },
-  btnStyle: {
-    flex: Platform.OS === 'ios' ? 0.17 : 0.13,
   },
 });
