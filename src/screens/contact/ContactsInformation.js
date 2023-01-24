@@ -1,5 +1,12 @@
 import React, {useState, useEffect} from 'react';
-import {View, StyleSheet, ScrollView, SafeAreaView, FlatList} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  ScrollView,
+  SafeAreaView,
+  FlatList,
+  Platform,
+} from 'react-native';
 import AddContactItem from '../../components/contact/AddContactItem';
 import ContactItem from '../../components/ContactItem';
 import MainActionButton from '../../components/MainActionButton';
@@ -70,34 +77,34 @@ const ContactsInformation = ({navigation}) => {
 
   return (
     <SafeAreaView>
-    <View style={[styles.view, g_styles.container]}>
-      <TopTitle
-        title={'Contacts Information'}
-        prevPath={'ContactList'}
-        isClose={false}
-      />
-      <ScrollView style={styles.middle_view}>
-        <View style={g_styles.box}>
-          {list.map((row, key) => {
-            return (
-              <ContactItem
-                key={key}
-                row={row}
-                selectedList={selectedList}
-                setSelectedList={setSelectedList}
-              />
-            );
-          })}
-          <AddContactItem />
-        </View>
-      </ScrollView>
-      <MainActionButton
-        text={'Create Transaction'}
-        isDisable={isDisable}
-        onPress={() => navigation.navigate('TransactionRoom')}
-        style={{flex: 0.17}}
-      />
-    </View>
+      <View style={[styles.view, g_styles.container]}>
+        <TopTitle
+          title={'Contacts Information'}
+          prevPath={'ContactList'}
+          isClose={false}
+        />
+        <ScrollView style={styles.middle_view}>
+          <View style={g_styles.box}>
+            {list.map((row, key) => {
+              return (
+                <ContactItem
+                  key={key}
+                  row={row}
+                  selectedList={selectedList}
+                  setSelectedList={setSelectedList}
+                />
+              );
+            })}
+            <AddContactItem />
+          </View>
+        </ScrollView>
+        <MainActionButton
+          style={styles.btnStyle}
+          text={'Create Transaction'}
+          isDisable={isDisable}
+          onPress={() => navigation.navigate('TransactionRoom')}
+        />
+      </View>
     </SafeAreaView>
   );
 };
@@ -105,11 +112,11 @@ const ContactsInformation = ({navigation}) => {
 export default ContactsInformation;
 
 const styles = StyleSheet.create({
-  view: {
-
-  },
+  view: {},
   middle_view: {
-    flex: 1
+    flex: 1,
   },
-
+  btnStyle: {
+    flex: Platform.OS === 'ios' ? 0.17:0.13
+  }
 });
