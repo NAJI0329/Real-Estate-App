@@ -76,7 +76,7 @@ const ContactsInformation = ({navigation}) => {
         isClose={false}
       />
       <ScrollView>
-        <View style={g_styles.box}>
+        <View style={[g_styles.box, g_styles.my_5]}>
           {list.map((row, key) => {
             return (
               <ContactItem
