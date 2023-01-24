@@ -2,7 +2,7 @@ import React from 'react';
 import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
 import {color19, primaryMain, white} from '../ui/common/colors';
 
-const MainActionButton = ({text, onPress, isDisable = false, bgColor}) => {
+const MainActionButton = ({text, onPress, isDisable = false, bgColor, style}) => {
   const styles = StyleSheet.create({
     submitView: {
       padding: 15,
@@ -25,7 +25,7 @@ const MainActionButton = ({text, onPress, isDisable = false, bgColor}) => {
   });
 
   return (
-    <View style={styles.submitView}>
+    <View style={[style, styles.submitView]}>
       <TouchableOpacity
         style={[styles.submitBtn, isDisable && styles.disableButton]}
         onPress={() => {

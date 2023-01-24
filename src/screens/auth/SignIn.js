@@ -6,6 +6,8 @@ import {
   StyleSheet,
   TouchableOpacity,
   ScrollView,
+  Platform,
+  SafeAreaView,
 } from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
 import Logo from '../../components/Logo';
@@ -40,6 +42,7 @@ const SignIn = ({navigation}) => {
   };
 
   return (
+    <SafeAreaView>
     <ScrollView style={g_styles.container}>
       <View style={g_styles.box}>
         {/* Logo */}
@@ -78,6 +81,7 @@ const SignIn = ({navigation}) => {
               value={isRemember}
               onValueChange={newValue => setRemember(newValue)}
             />
+            <TextInput style={{borderColor: 'black',}} />
             <Text
               style={styles.rememberText}
               onPress={() => setRemember(!isRemember)}>
@@ -101,6 +105,7 @@ const SignIn = ({navigation}) => {
         </View>
       </View>
     </ScrollView>
+    </SafeAreaView>
   );
 };
 
@@ -150,7 +155,7 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 20,
     fontSize: 16,
-    lineHeight: 24,
+    paddingVertical: Platform.OS === 'ios' ? 15:10
   },
   errorBorder: {
     borderColor: color40,
@@ -161,12 +166,14 @@ const styles = StyleSheet.create({
     marginTop: 15,
     alignItems: 'center',
   },
-  rememberCheckBox: {},
+  rememberCheckBox: {
+    marginLeft: Platform.OS === 'ios' ? 10:0,
+    marginRight: Platform.OS === 'ios' ? 20: 0
+  },
   rememberText: {
     color: softGray,
     fontSize: 14,
     fontWeight: '500',
-    lineHeight: 20,
   },
   submitView: {
     backgroundColor: primaryMain,
