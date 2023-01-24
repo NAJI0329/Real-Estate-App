@@ -26,7 +26,6 @@ const ContactItem = ({row}) => {
         <Text style={styles.text}>{row.city}</Text>
       </View>
       <Image source={link} style={styles.link} />
-      <Text style={styles.code}>{row.code}</Text>
     </Shadow>
   );
 };

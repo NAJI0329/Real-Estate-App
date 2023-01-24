@@ -94,7 +94,7 @@ const ConfirmInformation = ({navigation}) => {
       </View> */}
 
       <MainActionButton
-        style={{flex: .2}}
+        style={{flex: .17}}
         text={'Continue'}
         onPress={() => navigation.navigate('ContactList')}
       />
