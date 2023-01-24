@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View, StyleSheet, ScrollView} from 'react-native';
+import {View, StyleSheet, ScrollView, SafeAreaView, FlatList} from 'react-native';
 import AddContactItem from '../../components/contact/AddContactItem';
 import ContactItem from '../../components/ContactItem';
 import MainActionButton from '../../components/MainActionButton';
@@ -69,13 +69,14 @@ const ContactsInformation = ({navigation}) => {
   }, [selectedList]);
 
   return (
-    <View style={g_styles.container}>
+    <SafeAreaView>
+    <View style={[styles.view, g_styles.container]}>
       <TopTitle
         title={'Contacts Information'}
         prevPath={'ContactList'}
         isClose={false}
       />
-      <ScrollView>
+      <ScrollView style={styles.middle_view}>
         <View style={g_styles.box}>
           {list.map((row, key) => {
             return (
@@ -94,11 +95,21 @@ const ContactsInformation = ({navigation}) => {
         text={'Create Transaction'}
         isDisable={isDisable}
         onPress={() => navigation.navigate('TransactionRoom')}
+        style={{flex: 0.17}}
       />
     </View>
+    </SafeAreaView>
   );
 };
 
 export default ContactsInformation;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  view: {
+
+  },
+  middle_view: {
+    flex: 1
+  },
+
+});

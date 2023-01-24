@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import DropShadow from "react-native-drop-shadow";
 import {
   color13,
   color25,
@@ -52,12 +53,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 8,
     padding: 20,
-    elevation: 1,
-    shadowOpacity: 0.2,
-    shadowColor: softGray,
-    marginTop: 5,
+    marginTop: 10,
     marginBottom: 5,
     position: 'relative',
+    borderBottomWidth: 2,
+    borderLeftWidth: 1,
+    borderRightWidth: 1,
+    borderBottomColor: 'rgba(0,0,0,.1)',
+    borderRightColor: 'rgba(0,0,0,.1)',
+    borderLeftColor: 'rgba(0,0,0,.1)',
   },
   activeIconView: {
     backgroundColor: primaryMain,

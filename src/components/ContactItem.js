@@ -1,21 +1,18 @@
 import React from 'react';
 import {Text, View, Image, StyleSheet} from 'react-native';
-import {
-  color18,
-  color37,
-  grayBlack,
-  primaryMain,
-  white,
-} from '../ui/common/colors';
+import {color18, grayBlack, primaryMain, white} from '../ui/common/colors';
 import {Shadow} from 'react-native-shadow-2';
-import g_styles from '../ui/common/styles';
 
 const avatar = require('../../assets/images/avatar.png');
 const link = require('../../assets/images/link.png');
 
 const ContactItem = ({row}) => {
   return (
-    <Shadow distance={4} offset={[1, 2]} style={styles.itemBox}>
+    <Shadow
+      distance={3}
+      offset={[0, 3]}
+      startColor={'#00000010'}
+      style={styles.itemBox}>
       <Image source={row?.avatar ? row.avatar : avatar} style={styles.avatar} />
       <View>
         <Text style={styles.type}>{row.type}</Text>
@@ -26,7 +23,6 @@ const ContactItem = ({row}) => {
         <Text style={styles.text}>{row.city}</Text>
       </View>
       <Image source={link} style={styles.link} />
-      <Text style={styles.code}>{row.code}</Text>
     </Shadow>
   );
 };

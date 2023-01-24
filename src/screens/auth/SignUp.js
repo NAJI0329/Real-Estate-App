@@ -6,6 +6,8 @@ import {
   StyleSheet,
   TouchableOpacity,
   ScrollView,
+  Platform,
+  SafeAreaView,
 } from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
 
@@ -44,81 +46,83 @@ const SignUp = ({navigation}) => {
   };
 
   return (
-    <View style={g_styles.container}>
-      <ScrollView style={g_styles.box}>
-        <View style={g_styles.mt_70}>
-          <View style={g_styles.itemsCenter}>
-            <Logo h={100} />
-          </View>
-          <Text style={styles.logText}>Simple Deeds</Text>
-        </View>
-
-        {/* Form */}
-        <View style={g_styles.mt_50}>
-          <Text style={styles.titleText}>Sign Up</Text>
-
-          <View>
-            <Text style={styles.label}>Email</Text>
-            <TextInput
-              style={[styles.input, errors ? styles.errorBorder : null]}
-              onChangeText={setEmail}
-              value={email}
-            />
+    <SafeAreaView>
+      <ScrollView style={g_styles.container}>
+        <View style={g_styles.box}>
+          <View style={g_styles.mt_70}>
+            <View style={g_styles.itemsCenter}>
+              <Logo h={100} />
+            </View>
+            <Text style={styles.logText}>Simple Deeds</Text>
           </View>
 
-          <View>
-            <Text style={styles.label}>Password</Text>
-            <TextInput
-              style={[styles.input, errors ? styles.errorBorder : null]}
-              secureTextEntry={true}
-              value={password}
-              onChangeText={setPassword}
-            />
-          </View>
+          {/* Form */}
+          <View style={g_styles.mt_50}>
+            <Text style={styles.titleText}>Sign Up</Text>
 
-          <View>
-            <Text style={styles.label}>Re-enter Password</Text>
-            <TextInput
-              style={[styles.input, errors ? styles.errorBorder : null]}
-              secureTextEntry={true}
-              value={password2}
-              onChangeText={setPassword2}
-            />
-          </View>
+            <View>
+              <Text style={styles.label}>Email</Text>
+              <TextInput
+                style={[styles.input, errors ? styles.errorBorder : null]}
+                onChangeText={setEmail}
+                value={email}
+              />
+            </View>
 
-          <View style={styles.rememberView}>
-            <CheckBox
-              tintColors={{true: primaryMain, false: softBlack}}
-              style={styles.rememberCheckBox}
-              disabled={false}
-              value={isRemember}
-              onValueChange={newValue => setRemember(newValue)}
-            />
-            <Text
-              style={styles.rememberText}
-              onPress={() => setRemember(!isRemember)}>
-              Remember me
-            </Text>
-          </View>
+            <View>
+              <Text style={styles.label}>Password</Text>
+              <TextInput
+                style={[styles.input, errors ? styles.errorBorder : null]}
+                secureTextEntry={true}
+                value={password}
+                onChangeText={setPassword}
+              />
+            </View>
 
-          <TouchableOpacity
-            style={styles.submitView}
-            onPress={() => onSubmit()}>
-            <Text style={styles.submitBtn}>Sign up</Text>
-          </TouchableOpacity>
+            <View>
+              <Text style={styles.label}>Re-enter Password</Text>
+              <TextInput
+                style={[styles.input, errors ? styles.errorBorder : null]}
+                secureTextEntry={true}
+                value={password2}
+                onChangeText={setPassword2}
+              />
+            </View>
 
-          <Text style={styles.sublinText}>or continue with</Text>
-          <GoogleSignButton />
+            <View style={styles.rememberView}>
+              <CheckBox
+                tintColors={{true: primaryMain, false: softBlack}}
+                style={styles.rememberCheckBox}
+                disabled={false}
+                value={isRemember}
+                onValueChange={newValue => setRemember(newValue)}
+              />
+              <Text
+                style={styles.rememberText}
+                onPress={() => setRemember(!isRemember)}>
+                Remember me
+              </Text>
+            </View>
 
-          <View style={styles.commentView}>
-            <Text style={styles.commentText}>Already have an account? </Text>
-            <TouchableOpacity onPress={() => navigation.navigate('SignIn')}>
-              <Text style={styles.commentLink}>Sign In</Text>
+            <TouchableOpacity
+              style={styles.submitView}
+              onPress={() => onSubmit()}>
+              <Text style={styles.submitBtn}>Sign up</Text>
             </TouchableOpacity>
+
+            <Text style={styles.sublinText}>or continue with</Text>
+            <GoogleSignButton />
+
+            <View style={styles.commentView}>
+              <Text style={styles.commentText}>Already have an account? </Text>
+              <TouchableOpacity onPress={() => navigation.navigate('SignIn')}>
+                <Text style={styles.commentLink}>Sign In</Text>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -171,7 +175,7 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 20,
     fontSize: 16,
-    lineHeight: 24,
+    paddingVertical: Platform.OS === 'ios' ? 15 : 10,
   },
   rememberView: {
     flexDirection: 'row',
@@ -179,7 +183,10 @@ const styles = StyleSheet.create({
     marginTop: 15,
     alignItems: 'center',
   },
-  rememberCheckBox: {},
+  rememberCheckBox: {
+    marginLeft: Platform.OS === 'ios' ? 10 : 0,
+    marginRight: Platform.OS === 'ios' ? 20 : 0,
+  },
   rememberText: {
     color: softGray,
     fontSize: 14,
