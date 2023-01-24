@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
 import {white, gray1, color44} from '../ui/common/colors';
 import {Shadow} from 'react-native-shadow-2';
@@ -10,17 +10,18 @@ import {
 const GoogleImg = require('./../../assets/images/google.png');
 
 const GoogleSignButton = () => {
-  GoogleSignin.configure({
-    androidClientId:
-      '108634540347-s9c53th4vqn9kojgvbb3a7g83fbvc99r.apps.googleusercontent.com',
-    iosClientId:
-      '108634540347-6eh2v8siq3f3bjr2ml7f3oecae14bqs4.apps.googleusercontent.com',
-  });
+  useEffect(()=>{
+    GoogleSignin.configure({
+      webClientId: "38589584158-fj02ajujk7j7u56upe70o1i522vsj47n.apps.googleusercontent.com",
+      iosClientId: "38589584158-h09c1ocjihjfvao929o8qrjc0d3nb47p.apps.googleusercontent.com",
+      offlineAccess: true
+    })
+  }, [])
 
   const GoogleSingUp = async () => {
     try {
       await GoogleSignin.hasPlayServices();
-      await GoogleSignin.signIn().then(result => {
+      GoogleSignin.signIn().then(result => {
         console.log(result);
       });
     } catch (error) {
