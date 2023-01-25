@@ -1,5 +1,12 @@
 import React from 'react';
-import {View, Text, StyleSheet, ScrollView, SafeAreaView, FlatList} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  SafeAreaView,
+  FlatList,
+  Platform,
+} from 'react-native';
 import MainActionButton from '../../../components/MainActionButton';
 import TopTitle from '../../../components/TopTitle';
 import TransactionInfoItem from '../../../components/TramsactomInfoItem';
@@ -20,47 +27,47 @@ const ConfirmInformation = ({navigation}) => {
       title: 'Executed Contract',
       content: 'Uploaded Date',
       subContent: '22/01/23',
-      active: true
+      active: true,
     },
     {
       icon: icon1,
       title: 'Property Address',
       content: '1276 County Rd # 4206 Knox City, Texas (TX), 79529',
-      linkPath: 'EditAddress'
+      linkPath: 'EditAddress',
     },
     {
       icon: icon3,
       title: 'Sales Price',
       content: '$3,500,000',
-      linkPath: 'EditSalesPrice'
+      linkPath: 'EditSalesPrice',
     },
     {
       icon: icon5,
       title: 'Due Diligence',
       content: '27/01/23 5:00 P.M.',
-      linkPath: 'EditDueDiligenceDate'
+      linkPath: 'EditDueDiligenceDate',
     },
     {
       icon: icon5,
       title: 'Projected Closing Day',
       content: '27/01/23',
-      linkPath: 'EditClosingDate'
-    }
-  ]
+      linkPath: 'EditClosingDate',
+    },
+  ];
   return (
     <SafeAreaView>
-    <View style={[styles.view, g_styles.container]}>
-      <TopTitle
-        title={'Confirm Information'}
-        prevPath={'SignUp'}
-        closePath="SignUp"
-      />
+      <View style={[styles.view, g_styles.container]}>
+        <TopTitle
+          title={'Confirm Information'}
+          prevPath={'SignUp'}
+          closePath="SignUp"
+        />
         <View style={[styles.middle_view, g_styles.box]}>
           <Text style={styles.infoText}>Transaction Infromation</Text>
 
-          <FlatList 
+          <FlatList
             data={items}
-            renderItem={({item})=>(
+            renderItem={({item}) => (
               <TransactionInfoItem
                 icon={item.icon}
                 title={item.title}
@@ -83,9 +90,8 @@ const ConfirmInformation = ({navigation}) => {
             content={'1/4 Family'}
             linkPath={''}
           /> */}
-          
         </View>
-      {/* <View style={styles.submitView}>
+        {/* <View style={styles.submitView}>
         <TouchableOpacity
           style={styles.submitBtn}
           onPress={() => navigation.navigate('ContactList')}>
@@ -93,12 +99,11 @@ const ConfirmInformation = ({navigation}) => {
         </TouchableOpacity>
       </View> */}
 
-      <MainActionButton
-        style={{flex: .17}}
-        text={'Continue'}
-        onPress={() => navigation.navigate('ContactList')}
-      />
-    </View>
+        <MainActionButton
+          text={'Continue'}
+          onPress={() => navigation.navigate('ContactList')}
+        />
+      </View>
     </SafeAreaView>
   );
 };
@@ -106,9 +111,7 @@ const ConfirmInformation = ({navigation}) => {
 export default ConfirmInformation;
 
 const styles = StyleSheet.create({
-  view: {
-    
-  },  
+  view: {},
   middle_view: {
     flex: 1,
   },
