@@ -4,7 +4,7 @@ import {primaryMain, white} from '../ui/common/colors';
 import {deviceWidth, deviceHeight} from '../ui/common/responsive';
 import g_styles from '../ui/common/styles';
 
-const LogoImg = require('./../../assets/images/white_logo.png');
+const LogoImg = require('./../../assets/images/logo/white_logo.png');
 
 const Splash = ({navigation}) => {
   // after 2 seconds it should redirect to Login

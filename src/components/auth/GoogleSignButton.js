@@ -1,22 +1,24 @@
-import React, { useEffect } from 'react';
+import React, {useEffect} from 'react';
 import {Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
-import {white, gray1, color44} from '../ui/common/colors';
+import {white, gray1, color44} from '../../ui/common/colors';
 import {Shadow} from 'react-native-shadow-2';
 import {
   GoogleSignin,
   statusCodes,
 } from '@react-native-google-signin/google-signin';
 
-const GoogleImg = require('./../../assets/images/google.png');
+const GoogleImg = require('./../../../assets/images/google.png');
 
 const GoogleSignButton = () => {
-  useEffect(()=>{
+  useEffect(() => {
     GoogleSignin.configure({
-      webClientId: "38589584158-fj02ajujk7j7u56upe70o1i522vsj47n.apps.googleusercontent.com",
-      iosClientId: "38589584158-h09c1ocjihjfvao929o8qrjc0d3nb47p.apps.googleusercontent.com",
-      offlineAccess: true
-    })
-  }, [])
+      webClientId:
+        '38589584158-fj02ajujk7j7u56upe70o1i522vsj47n.apps.googleusercontent.com',
+      iosClientId:
+        '38589584158-h09c1ocjihjfvao929o8qrjc0d3nb47p.apps.googleusercontent.com',
+      offlineAccess: true,
+    });
+  }, []);
 
   const GoogleSingUp = async () => {
     try {

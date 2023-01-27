@@ -21,11 +21,10 @@ import {
   softGray,
   white,
 } from '../../ui/common/colors';
-import {deviceHeight} from '../../ui/common/responsive';
 import {emailValidation} from '../../utils/emailValidation';
 
 import g_styles from '../../ui/common/styles';
-import GoogleSignButton from '../../components/GoogleSignButton';
+import GoogleSignButton from '../../components/auth/GoogleSignButton';
 
 const SignUp = ({navigation}) => {
   const [isRemember, setRemember] = useState(false);
@@ -134,6 +133,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 24,
     fontWeight: '500',
+    lineHeight: 32,
+    fontFamily: 'SF Pro Display',
   },
   logText: {
     marginTop: 20,
