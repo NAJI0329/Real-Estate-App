@@ -25,6 +25,8 @@ import {emailValidation} from '../../utils/emailValidation';
 
 import g_styles from '../../ui/common/styles';
 import GoogleSignButton from '../../components/auth/GoogleSignButton';
+import LogoSection from '../../components/auth/LogoSection';
+import Input from '../../components/auth/Input';
 
 const SignUp = ({navigation}) => {
   const [isRemember, setRemember] = useState(false);
@@ -48,46 +50,39 @@ const SignUp = ({navigation}) => {
     <SafeAreaView>
       <ScrollView style={g_styles.container}>
         <View style={g_styles.box}>
+          {/* Logo */}
           <View style={g_styles.mt_70}>
-            <View style={g_styles.itemsCenter}>
-              <Logo h={100} />
-            </View>
-            <Text style={styles.logText}>Simple Deeds</Text>
+            <LogoSection />
           </View>
 
           {/* Form */}
           <View style={g_styles.mt_50}>
             <Text style={styles.titleText}>Sign Up</Text>
-
-            <View>
-              <Text style={styles.label}>Email</Text>
-              <TextInput
-                style={[styles.input, errors ? styles.errorBorder : null]}
-                onChangeText={setEmail}
-                value={email}
-              />
-            </View>
-
-            <View>
-              <Text style={styles.label}>Password</Text>
-              <TextInput
-                style={[styles.input, errors ? styles.errorBorder : null]}
-                secureTextEntry={true}
-                value={password}
-                onChangeText={setPassword}
-              />
-            </View>
-
-            <View>
-              <Text style={styles.label}>Re-enter Password</Text>
-              <TextInput
-                style={[styles.input, errors ? styles.errorBorder : null]}
-                secureTextEntry={true}
-                value={password2}
-                onChangeText={setPassword2}
-              />
-            </View>
-
+            {/* Email Input */}
+            <Input
+              label={'Email'}
+              secureTextEntry={false}
+              value={email}
+              onChangeValue={setEmail}
+              error={errors?.email}
+            />
+            {/* Password Input */}
+            <Input
+              label={'Password'}
+              secureTextEntry={true}
+              value={password}
+              onChangeValue={setPassword}
+              error={errors?.password}
+            />
+            {/* Re Enter Password Input */}
+            <Input
+              label={'Re-enter Password'}
+              secureTextEntry={true}
+              value={password2}
+              onChangeValue={setPassword2}
+              error={errors?.setPassword2}
+            />
+            {/* Remember Me CheckBox */}
             <View style={styles.rememberView}>
               <CheckBox
                 tintColors={{true: primaryMain, false: softBlack}}
@@ -135,13 +130,6 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     lineHeight: 32,
     fontFamily: 'SF Pro Display',
-  },
-  logText: {
-    marginTop: 20,
-    color: primaryMain,
-    textAlign: 'center',
-    fontSize: 20,
-    fontWeight: '700',
   },
   errorBorder: {
     borderColor: color40,
@@ -226,7 +214,7 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     lineHeight: 24,
     textAlign: 'center',
-    marginTop: 10,
-    marginBottom: 10,
+    marginTop: 24,
+    marginBottom: 24,
   },
 });
