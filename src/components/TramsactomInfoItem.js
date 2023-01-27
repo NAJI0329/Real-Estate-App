@@ -4,7 +4,7 @@ import {color13, color25, grayBlack, primaryMain} from '../ui/common/colors';
 import {useNavigation} from '@react-navigation/native';
 
 const EditIcon = require('./../../assets/images/link.png');
-const LinkIcon = require('./../../assets/images/rightArrow.png');
+const LinkIcon = require('./../../assets/images/icons/link.png');
 
 const TransactionInfoItem = ({
   icon,

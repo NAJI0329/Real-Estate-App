@@ -41,7 +41,6 @@ const ConfirmInformation = ({navigation}) => {
       icon: ContactsImg,
       title: 'Contacts Information',
       content: 'All Parties',
-      subContent: '22/01/23',
       linkPath: 'ContactsInformation',
       active: true,
     },
