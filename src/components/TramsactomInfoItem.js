@@ -1,16 +1,10 @@
 import React from 'react';
 import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
-import DropShadow from "react-native-drop-shadow";
-import {
-  color13,
-  color25,
-  grayBlack,
-  primaryMain,
-  softGray,
-} from '../ui/common/colors';
+import {color13, color25, grayBlack, primaryMain} from '../ui/common/colors';
 import {useNavigation} from '@react-navigation/native';
 
-const link = require('./../../assets/images/link.png');
+const EditIcon = require('./../../assets/images/link.png');
+const LinkIcon = require('./../../assets/images/rightArrow.png');
 
 const TransactionInfoItem = ({
   icon,
@@ -18,10 +12,11 @@ const TransactionInfoItem = ({
   content,
   subContent,
   active = false,
+  editPath,
   linkPath,
 }) => {
   const navigation = useNavigation();
-
+  console.log(editPath);
   return (
     <View style={styles.view}>
       <View style={[styles.iconView, active && styles.activeIconView]}>
@@ -32,12 +27,13 @@ const TransactionInfoItem = ({
         <Text style={styles.content}>{content}</Text>
         {subContent && <Text style={styles.subContent}>{subContent}</Text>}
       </View>
-      {linkPath && (
+      {(editPath || linkPath) && (
         <TouchableOpacity
           style={styles.link}
-          onPress={() => navigation.navigate(linkPath)}>
+          onPress={() => navigation.navigate(editPath)}>
           <View>
-            <Image source={link} />
+            {editPath && <Image source={EditIcon} />}
+            {linkPath && <Image source={LinkIcon} />}
           </View>
         </TouchableOpacity>
       )}

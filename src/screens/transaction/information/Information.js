@@ -19,9 +19,17 @@ const icon3 = require('./../../../../assets/images/icon3.png');
 // const icon4 = require('./../../assets/images/icon4.png');
 const icon5 = require('./../../../../assets/images/icon5.png');
 const ExecutedContractImg = require('./../../../../assets/images/excuted-contract.png');
+const TransactionIdImg = require('./../../../../assets/images/icons/copy.png');
+const ContactsImg = require('./../../../../assets/images/icons/partners.png');
 
 const ConfirmInformation = ({navigation}) => {
   const items = [
+    {
+      icon: TransactionIdImg,
+      title: 'Transaction ID',
+      content: '#00000000000000000009281745',
+      active: true,
+    },
     {
       icon: ExecutedContractImg,
       title: 'Executed Contract',
@@ -30,28 +38,36 @@ const ConfirmInformation = ({navigation}) => {
       active: true,
     },
     {
+      icon: ContactsImg,
+      title: 'Contacts Information',
+      content: 'All Parties',
+      subContent: '22/01/23',
+      linkPath: 'ContactsInformation',
+      active: true,
+    },
+    {
       icon: icon1,
       title: 'Property Address',
       content: '1276 County Rd # 4206 Knox City, Texas (TX), 79529',
-      linkPath: 'EditAddress',
+      editPath: 'EditAddress',
     },
     {
       icon: icon3,
       title: 'Sales Price',
       content: '$3,500,000',
-      linkPath: 'EditSalesPrice',
+      editPath: 'EditSalesPrice',
     },
     {
       icon: icon5,
       title: 'Due Diligence',
       content: '27/01/23 5:00 P.M.',
-      linkPath: 'EditDueDiligenceDate',
+      editPath: 'EditDueDiligenceDate',
     },
     {
       icon: icon5,
       title: 'Projected Closing Day',
       content: '27/01/23',
-      linkPath: 'EditClosingDate',
+      editPath: 'EditClosingDate',
     },
   ];
   return (
@@ -75,6 +91,7 @@ const ConfirmInformation = ({navigation}) => {
                 subContent={item.subContent}
                 active={item.active}
                 linkPath={item.linkPath}
+                editPath={item.editPath}
               />
             )}
           />
@@ -91,14 +108,6 @@ const ConfirmInformation = ({navigation}) => {
             linkPath={''}
           /> */}
         </View>
-        {/* <View style={styles.submitView}>
-        <TouchableOpacity
-          style={styles.submitBtn}
-          onPress={() => navigation.navigate('ContactList')}>
-          <Text style={styles.submitText}>Continue</Text>
-        </TouchableOpacity>
-      </View> */}
-
         <MainActionButton
           text={'Continue'}
           onPress={() => navigation.navigate('ContactList')}
