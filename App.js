@@ -329,7 +329,7 @@ const App = () => {
     <MenuProvider>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName="ConfirmInformation"
+          initialRouteName="Splash"
           screenOptions={{
             headerShown: false,
             presentation: 'modal',
