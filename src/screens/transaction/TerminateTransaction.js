@@ -21,7 +21,7 @@ const TerminateTransaction = ({navigation}) => {
       <TopTitle title={'Transaction'} prevPath={'SignIn'} />
       <ScrollView>
         <View style={g_styles.box}>
-          <Text style={styles.infoText}>Transaction Infromation</Text>
+          <Text style={styles.infoText}>Transaction Information</Text>
           <TransactionInfoItem
             icon={ExecutedContractImg}
             title={'Executed Contract'}

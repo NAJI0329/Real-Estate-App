@@ -78,7 +78,7 @@ const ConfirmInformation = ({navigation}) => {
           closePath="SignUp"
         />
         <View style={[styles.middle_view, g_styles.box]}>
-          <Text style={styles.infoText}>Transaction Infromation</Text>
+          <Text style={styles.infoText}>Transaction Information</Text>
 
           <FlatList
             data={items}
