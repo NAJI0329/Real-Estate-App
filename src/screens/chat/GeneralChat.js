@@ -60,7 +60,7 @@ const GeneralChat = () => {
     <SafeAreaView>
       <View style={g_styles.container}>
         <TopTitle
-          title={'General Task List'}
+          title={'General Chat'}
           prevPath={'TransactionRoom'}
           isClose={false}
         />
