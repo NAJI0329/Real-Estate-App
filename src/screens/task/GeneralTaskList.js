@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import GeneralChatItem from '../../components/chat/GeneralChatItem';
 import SearchInput from '../../components/SearchInput';
+import GeneralTaskItem from '../../components/task/GeneralTaskItem';
 import TaskRoomBottomMenu from '../../components/TaskRoomBottomMenu';
 import TopTitle from '../../components/TopTitle';
 import g_styles from '../../ui/common/styles';
@@ -25,33 +26,25 @@ const UnsplashImg1 = require('./../../../assets/images/unsplash/unsplash1.png');
 const UnsplashImg2 = require('./../../../assets/images/unsplash/unsplash2.png');
 const UnsplashImg3 = require('./../../../assets/images/unsplash/unsplash3.png');
 
-const GeneralChat = () => {
+const GeneralTaskList = () => {
   const items = [
     {
-      icon: ChatIcon1,
-      title: 'Title + Buyer + BA + LO',
-      description: 'I just sent the files, let me know...',
+      title: 'New Transaction Order',
+      description: 'Waiting for review',
       date: '12:00PM',
-      count: 1,
-      users: [UserIcon1, UserIcon2],
       unsplash: UnsplashImg1,
     },
     {
-      icon: ChatIcon2,
-      title: 'Title + BA + LO',
-      description: 'I just sent the files, let me know...',
+      title: 'Change Requested',
+      description: 'Waiting for review',
       date: 'Yesterday',
-      count: 4,
-      users: [UserIcon1, UserIcon2, UserIcon3],
       unsplash: UnsplashImg2,
     },
     {
       icon: ChatIcon3,
-      title: 'Title + Buyer',
-      description: 'I just sent the files, let me know...',
+      title: 'Sign Contract',
+      description: 'Waiting for review',
       date: 'Friday',
-      count: 2,
-      users: [],
       unsplash: UnsplashImg3,
     },
   ];
@@ -60,18 +53,18 @@ const GeneralChat = () => {
     <SafeAreaView>
       <View style={g_styles.container}>
         <TopTitle
-          title={'General Chat'}
+          title={'General Task List'}
           prevPath={'TransactionRoom'}
           isClose={false}
         />
         <View style={g_styles.box}>
-          <SearchInput placeholder={'Search chats by address'} />
+          <SearchInput placeholder={'Search chats'} />
         </View>
         <ScrollView style={g_styles.box}>
           <FlatList
-            style={g_styles.py_10}
+            style={g_styles.mt_16}
             data={items}
-            renderItem={({item}) => <GeneralChatItem row={item} />}
+            renderItem={({item}) => <GeneralTaskItem row={item} />}
           />
         </ScrollView>
         <TaskRoomBottomMenu />
@@ -80,6 +73,6 @@ const GeneralChat = () => {
   );
 };
 
-export default GeneralChat;
+export default GeneralTaskList;
 
 const styles = StyleSheet.create({});

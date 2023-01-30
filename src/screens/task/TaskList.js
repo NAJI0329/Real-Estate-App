@@ -54,7 +54,7 @@ const TaskList = () => {
       <ScrollView>
         <View style={g_styles.box}>
           <SearchInput placeholder={'Search Chats'} />
-          <View style={g_styles.mt_10}>
+          <View style={g_styles.py_10}>
             {tasks.map((row, key) => {
               return <TaskItem key={key} row={row} />;
             })}

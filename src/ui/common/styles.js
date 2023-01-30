@@ -18,6 +18,7 @@ const g_styles = StyleSheet.create({
   justifyBetween: {justifyContent: 'space-between'},
   justifyCenter: {justifyContent: 'center'},
   py_24: {paddingVertical: 24},
+  py_10: {paddingVertical: 10},
   mt_5: {marginTop: 5},
   mt_10: {marginTop: 10},
   mt_16: {marginTop: 16},

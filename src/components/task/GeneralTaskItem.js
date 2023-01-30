@@ -7,13 +7,12 @@ import {
   primaryMain,
   white,
   color29,
-  color30,
 } from '../../ui/common/colors';
 import {useNavigation} from '@react-navigation/native';
 import {Shadow} from 'react-native-shadow-2';
 import g_styles from '../../ui/common/styles';
 
-const GeneralChatItem = ({row}) => {
+const GeneralTaskItem = ({row}) => {
   const navigation = useNavigation();
 
   const styles = StyleSheet.create({
@@ -25,7 +24,7 @@ const GeneralChatItem = ({row}) => {
       marginBottom: 20,
       width: '100%',
       borderWidth: 1,
-      borderColor: color30,
+      borderColor: color40,
     },
     iconView: {
       marginRight: 20,
@@ -124,26 +123,10 @@ const GeneralChatItem = ({row}) => {
         style={styles.itemView}>
         <View>
           <View style={[g_styles.flex, g_styles.justifyBetween]}>
-            <View style={styles.iconView}>
-              <Image source={row?.icon} style={styles.icon} />
-              {row?.count > 0 && (
-                <View style={styles.countView}>
-                  <Text style={styles.countText}>{row?.count}</Text>
-                </View>
-              )}
-            </View>
             <View style={[{flex: 1}, g_styles.flex, g_styles.justifyBetween]}>
               <View>
                 <Text style={styles.sessionName}>{row?.title}</Text>
                 <Text style={styles.description}>{row?.description}</Text>
-
-                <View style={styles.usersView}>
-                  {row?.users.map((user, key) => {
-                    return (
-                      <Image source={user} key={key} style={styles.avatar} />
-                    );
-                  })}
-                </View>
               </View>
               <Text style={styles.dateText}>{row?.date}</Text>
             </View>
@@ -164,4 +147,4 @@ const GeneralChatItem = ({row}) => {
   );
 };
 
-export default GeneralChatItem;
+export default GeneralTaskItem;

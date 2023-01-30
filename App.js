@@ -52,6 +52,7 @@ import ShareFile from './src/screens/File/ShareFile';
 import TaskRoom from './src/screens/TaskRoom';
 import GroupChat from './src/screens/chat/GroupChat';
 import GeneralChat from './src/screens/chat/GeneralChat';
+import GeneralTaskList from './src/screens/task/GeneralTaskList';
 
 const App = () => {
   const Stack = createStackNavigator();
@@ -329,13 +330,18 @@ const App = () => {
       component: GeneralChat,
       options: verticalAnimation,
     },
+    {
+      name: 'GeneralTaskList',
+      component: GeneralTaskList,
+      options: verticalAnimation,
+    },
   ];
 
   return (
     <MenuProvider>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName="GeneralChat"
+          initialRouteName="GeneralTaskList"
           screenOptions={{
             headerShown: false,
             presentation: 'modal',
