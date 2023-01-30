@@ -51,6 +51,7 @@ import TerminateTransaction from './src/screens/transaction/TerminateTransaction
 import ShareFile from './src/screens/File/ShareFile';
 import TaskRoom from './src/screens/TaskRoom';
 import GroupChat from './src/screens/chat/GroupChat';
+import GeneralChat from './src/screens/chat/GeneralChat';
 
 const App = () => {
   const Stack = createStackNavigator();
@@ -323,13 +324,18 @@ const App = () => {
       component: ActivityLog,
       options: verticalAnimation,
     },
+    {
+      name: 'GeneralChat',
+      component: GeneralChat,
+      options: verticalAnimation,
+    },
   ];
 
   return (
     <MenuProvider>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName="Splash"
+          initialRouteName="GeneralChat"
           screenOptions={{
             headerShown: false,
             presentation: 'modal',
