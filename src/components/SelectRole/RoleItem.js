@@ -20,7 +20,7 @@ const RoleItem = ({row, setSelectedRole, selectedRole}) => {
       }}>
       <Shadow
         distance={2}
-        offset={[0, 2]}
+        offset={[0, 1]}
         startColor={'#00000010'}
         style={styles.itemBox}>
         <View style={[selectedRole === row && styles.selected]}>
