@@ -208,7 +208,7 @@ const ContactInfo = ({navigation}) => {
             </View>
           </View>
 
-          <SafeAreaView style={styles.submitView}>
+          <View style={styles.submitView}>
             <TouchableOpacity
               style={styles.submitBtn}
               onPress={() => {
@@ -216,7 +216,7 @@ const ContactInfo = ({navigation}) => {
               }}>
               <Text style={styles.submitText}>Continue</Text>
             </TouchableOpacity>
-          </SafeAreaView>
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>
