@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Text, View, StyleSheet} from 'react-native';
+import {Text, View, StyleSheet, SafeAreaView} from 'react-native';
 import g_styles from '../../ui/common/styles';
 import {ScrollView} from 'react-native-gesture-handler';
 import {primaryMain} from '../../ui/common/colors';
@@ -33,30 +33,32 @@ const SelectRole = () => {
   };
 
   return (
-    <View style={g_styles.container}>
-      <ScrollView style={g_styles.box}>
-        <Text style={styles.titleText}>
-          What’s your role in the transaction?
-        </Text>
-        <View>
-          {roles.map((row, key) => {
-            return (
-              <RoleItem
-                key={key}
-                row={row}
-                selectedRole={selectedRole}
-                setSelectedRole={setSelectedRole}
-              />
-            );
-          })}
-        </View>
-      </ScrollView>
-      <MainActionButton
-        text={'Continue'}
-        isDisable={isDisable}
-        onPress={onContinue}
-      />
-    </View>
+    <SafeAreaView>
+      <View style={g_styles.container}>
+        <ScrollView style={g_styles.box}>
+          <Text style={styles.titleText}>
+            What’s your role in the transaction?
+          </Text>
+          <View>
+            {roles.map((row, key) => {
+              return (
+                <RoleItem
+                  key={key}
+                  row={row}
+                  selectedRole={selectedRole}
+                  setSelectedRole={setSelectedRole}
+                />
+              );
+            })}
+          </View>
+        </ScrollView>
+        <MainActionButton
+          text={'Continue'}
+          isDisable={isDisable}
+          onPress={onContinue}
+        />
+      </View>
+    </SafeAreaView>
   );
 };
 
