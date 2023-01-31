@@ -109,7 +109,7 @@ const ContactInfo = ({navigation}) => {
             />
           </View> */}
           <View style={g_styles.flex}>
-            <View style={[g_styles.w_half, g_styles.px_10]}>
+            <View style={[g_styles.w_half, g_styles.pr_10]}>
               <Text style={styles.label}>First Name</Text>
               <TextInput
                 style={styles.TextInput}
@@ -117,7 +117,7 @@ const ContactInfo = ({navigation}) => {
                 value={fullname}
               />
             </View>
-            <View style={[g_styles.w_half, g_styles.px_10]}>
+            <View style={[g_styles.w_half, g_styles.pl_10]}>
               <Text style={styles.label}>Last Name</Text>
               <TextInput
                 style={styles.TextInput}
@@ -126,7 +126,7 @@ const ContactInfo = ({navigation}) => {
               />
             </View>
           </View>
-          <View style={[g_styles.w_full, g_styles.px_10]}>
+          <View style={[g_styles.w_full]}>
             <Text style={styles.label}>Email</Text>
             <TextInput
               style={styles.TextInput}
@@ -134,7 +134,7 @@ const ContactInfo = ({navigation}) => {
               value={email}
             />
           </View>
-          <View style={[g_styles.w_half, g_styles.px_10]}>
+          <View style={[g_styles.w_half, g_styles.pr_5]}>
             <Text style={styles.label}>Phone</Text>
             <TextInput
               style={styles.TextInput}
@@ -142,7 +142,7 @@ const ContactInfo = ({navigation}) => {
               value={phone}
             />
           </View>
-          <View style={[g_styles.w_full, g_styles.px_10]}>
+          <View style={[g_styles.w_full]}>
             <Text style={styles.label}>
               Addres Line #1 (Street Address, P.O Box)
             </Text>
@@ -152,7 +152,7 @@ const ContactInfo = ({navigation}) => {
               value={address}
             />
           </View>
-          <View style={[g_styles.w_full, g_styles.px_10]}>
+          <View style={[g_styles.w_full]}>
             <Text style={styles.label}>
               Addres Line #2 (Apartment, sute, unit, building, floor, etc.)
             </Text>
@@ -163,7 +163,7 @@ const ContactInfo = ({navigation}) => {
             />
           </View>
           <View style={g_styles.flex}>
-            <View style={[g_styles.w_half, g_styles.px_10]}>
+            <View style={[g_styles.w_half, g_styles.pr_10]}>
               <Text style={styles.label}>City</Text>
               <Dropdown
                 open={citiesOpen}
@@ -174,7 +174,7 @@ const ContactInfo = ({navigation}) => {
                 setItems={setCitiesItems}
               />
             </View>
-            <View style={[g_styles.w_half, g_styles.px_10]}>
+            <View style={[g_styles.w_half, g_styles.pl_10]}>
               <Text style={styles.label}>State</Text>
               <Dropdown
                 open={statesOpen}
@@ -187,7 +187,7 @@ const ContactInfo = ({navigation}) => {
             </View>
           </View>
           <View style={g_styles.flex}>
-            <View style={[g_styles.w_p30, g_styles.px_10]}>
+            <View style={[g_styles.w_p30, g_styles.pr_10]}>
               <Text style={styles.label}>Zip/Code</Text>
               <TextInput
                 style={styles.TextInput}
@@ -195,7 +195,7 @@ const ContactInfo = ({navigation}) => {
                 value={zipCode}
               />
             </View>
-            <View style={[g_styles.w_p70, g_styles.px_10]}>
+            <View style={[g_styles.w_p70, g_styles.pl_10]}>
               <Text style={styles.label}>Country</Text>
               <Dropdown
                 open={countriesOpen}
@@ -259,7 +259,7 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     lineHeight: 20,
     marginTop: 15,
-    // marginLeft: 20,
+    marginLeft: 20,
   },
   TextInput: {
     borderRadius: 100,
