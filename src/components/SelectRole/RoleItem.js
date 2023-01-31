@@ -22,8 +22,8 @@ const RoleItem = ({row, setSelectedRole, selectedRole}) => {
         distance={2}
         offset={[0, 1]}
         startColor={'#00000010'}
-        style={styles.itemBox}>
-        <View style={[selectedRole === row && styles.selected]}>
+        style={[styles.itemBox, selectedRole === row && styles.selected]}>
+        <View>
           <Text style={styles.text}>{row}</Text>
         </View>
       </Shadow>
