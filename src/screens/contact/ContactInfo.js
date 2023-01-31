@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {
+  black,
   black1,
   color20,
   gray1,
@@ -75,29 +76,28 @@ const ContactInfo = ({navigation}) => {
   };
 
   return (
-    <View style={styles.container}>
-      <SafeAreaView>
-        <TopTitle
-          title="Contact Info"
-          prevPath={'ContactList'}
-          closePath="SignUp"
-        />
-        <ScrollView style={styles.scrollView}>
-          <View style={styles.box}>
-            <View style={styles.avatarView}>
-              <View>
-                <Image
-                  source={resourcePath.uri ? {uri: resourcePath.uri} : Avatar}
-                  style={styles.avatar}
-                />
-                <TouchableOpacity onPress={onSelectAvatar}>
-                  <View style={styles.addView}>
-                    <Text style={styles.addBtn}>+</Text>
-                  </View>
-                </TouchableOpacity>
-              </View>
+    <SafeAreaView style={g_styles.container}>
+      <TopTitle
+        title="Contact Info"
+        prevPath={'ContactList'}
+        closePath="SignUp"
+      />
+      <ScrollView>
+        <View style={g_styles.box}>
+          <View style={styles.avatarView}>
+            <View>
+              <Image
+                source={resourcePath.uri ? {uri: resourcePath.uri} : Avatar}
+                style={styles.avatar}
+              />
+              <TouchableOpacity onPress={onSelectAvatar}>
+                <View style={styles.addView}>
+                  <Text style={styles.addBtn}>+</Text>
+                </View>
+              </TouchableOpacity>
             </View>
-            {/* <View style={{width: '50%', paddingLeft: 10, paddingRight: 10}}>
+          </View>
+          {/* <View style={{width: '50%', paddingLeft: 10, paddingRight: 10}}>
             <Text style={styles.label}>Assign Role</Text>
             <Dropdown
               open={rolesOpen}
@@ -108,137 +108,124 @@ const ContactInfo = ({navigation}) => {
               setItems={setRolesItems}
             />
           </View> */}
-            <View style={g_styles.flex}>
-              <View style={[g_styles.w_half, g_styles.px_10]}>
-                <Text style={styles.label}>First Name</Text>
-                <TextInput
-                  style={styles.TextInput}
-                  onChangeText={setFullname}
-                  value={fullname}
-                />
-              </View>
-              <View style={[g_styles.w_half, g_styles.px_10]}>
-                <Text style={styles.label}>Last Name</Text>
-                <TextInput
-                  style={styles.TextInput}
-                  onChangeText={setLastname}
-                  value={lastname}
-                />
-              </View>
-            </View>
-            <View style={[g_styles.w_full, g_styles.px_10]}>
-              <Text style={styles.label}>Email</Text>
+          <View style={g_styles.flex}>
+            <View style={[g_styles.w_half, g_styles.px_10]}>
+              <Text style={styles.label}>First Name</Text>
               <TextInput
                 style={styles.TextInput}
-                onChangeText={setEmail}
-                value={email}
+                onChangeText={setFullname}
+                value={fullname}
               />
             </View>
             <View style={[g_styles.w_half, g_styles.px_10]}>
-              <Text style={styles.label}>Phone</Text>
+              <Text style={styles.label}>Last Name</Text>
               <TextInput
                 style={styles.TextInput}
-                onChangeText={setPhone}
-                value={phone}
+                onChangeText={setLastname}
+                value={lastname}
               />
             </View>
-            <View style={[g_styles.w_full, g_styles.px_10]}>
-              <Text style={styles.label}>
-                Addres Line #1 (Street Address, P.O Box)
-              </Text>
-              <TextInput
-                style={styles.TextInput}
-                onChangeText={setAddress}
-                value={address}
-              />
-            </View>
-            <View style={[g_styles.w_full, g_styles.px_10]}>
-              <Text style={styles.label}>
-                Addres Line #2 (Apartment, sute, unit, building, floor, etc.)
-              </Text>
-              <TextInput
-                style={styles.TextInput}
-                onChangeText={setAddress2}
-                value={address2}
-              />
-            </View>
-            <View style={g_styles.flex}>
-              <View style={[g_styles.w_half, g_styles.px_10]}>
-                <Text style={styles.label}>City</Text>
-                <Dropdown
-                  open={citiesOpen}
-                  value={citiesValue}
-                  items={citiesItems}
-                  setOpen={setCitiesOpen}
-                  setValue={setCitiesValue}
-                  setItems={setCitiesItems}
-                />
-              </View>
-              <View style={[g_styles.w_half, g_styles.px_10]}>
-                <Text style={styles.label}>State</Text>
-                <Dropdown
-                  open={statesOpen}
-                  value={statesValue}
-                  items={statesItems}
-                  setOpen={setStatesOpen}
-                  setValue={setStatesValue}
-                  setItems={setStatesItems}
-                />
-              </View>
-            </View>
-            <View style={g_styles.flex}>
-              <View style={[g_styles.w_p30, g_styles.px_10]}>
-                <Text style={styles.label}>Zip/Code</Text>
-                <TextInput
-                  style={styles.TextInput}
-                  onChangeText={setZipCode}
-                  value={zipCode}
-                />
-              </View>
-              <View style={[g_styles.w_p70, g_styles.px_10]}>
-                <Text style={styles.label}>Country</Text>
-                <Dropdown
-                  open={countriesOpen}
-                  value={countriesValue}
-                  items={countriesItems}
-                  setOpen={setCountriesOpen}
-                  setValue={setCountriesValue}
-                  setItems={setCountriesItems}
-                />
-              </View>
-            </View>
-            <SafeAreaView style={styles.submitView}>
-              <TouchableOpacity
-                style={styles.submitBtn}
-                onPress={() => {
-                  navigation.navigate('ContactList');
-                }}>
-                <Text style={styles.submitText}>Continue</Text>
-              </TouchableOpacity>
-            </SafeAreaView>
           </View>
-        </ScrollView>
-      </SafeAreaView>
-    </View>
+          <View style={[g_styles.w_full, g_styles.px_10]}>
+            <Text style={styles.label}>Email</Text>
+            <TextInput
+              style={styles.TextInput}
+              onChangeText={setEmail}
+              value={email}
+            />
+          </View>
+          <View style={[g_styles.w_half, g_styles.px_10]}>
+            <Text style={styles.label}>Phone</Text>
+            <TextInput
+              style={styles.TextInput}
+              onChangeText={setPhone}
+              value={phone}
+            />
+          </View>
+          <View style={[g_styles.w_full, g_styles.px_10]}>
+            <Text style={styles.label}>
+              Addres Line #1 (Street Address, P.O Box)
+            </Text>
+            <TextInput
+              style={styles.TextInput}
+              onChangeText={setAddress}
+              value={address}
+            />
+          </View>
+          <View style={[g_styles.w_full, g_styles.px_10]}>
+            <Text style={styles.label}>
+              Addres Line #2 (Apartment, sute, unit, building, floor, etc.)
+            </Text>
+            <TextInput
+              style={styles.TextInput}
+              onChangeText={setAddress2}
+              value={address2}
+            />
+          </View>
+          <View style={g_styles.flex}>
+            <View style={[g_styles.w_half, g_styles.px_10]}>
+              <Text style={styles.label}>City</Text>
+              <Dropdown
+                open={citiesOpen}
+                value={citiesValue}
+                items={citiesItems}
+                setOpen={setCitiesOpen}
+                setValue={setCitiesValue}
+                setItems={setCitiesItems}
+              />
+            </View>
+            <View style={[g_styles.w_half, g_styles.px_10]}>
+              <Text style={styles.label}>State</Text>
+              <Dropdown
+                open={statesOpen}
+                value={statesValue}
+                items={statesItems}
+                setOpen={setStatesOpen}
+                setValue={setStatesValue}
+                setItems={setStatesItems}
+              />
+            </View>
+          </View>
+          <View style={g_styles.flex}>
+            <View style={[g_styles.w_p30, g_styles.px_10]}>
+              <Text style={styles.label}>Zip/Code</Text>
+              <TextInput
+                style={styles.TextInput}
+                onChangeText={setZipCode}
+                value={zipCode}
+              />
+            </View>
+            <View style={[g_styles.w_p70, g_styles.px_10]}>
+              <Text style={styles.label}>Country</Text>
+              <Dropdown
+                open={countriesOpen}
+                value={countriesValue}
+                items={countriesItems}
+                setOpen={setCountriesOpen}
+                setValue={setCountriesValue}
+                setItems={setCountriesItems}
+              />
+            </View>
+          </View>
+
+          <SafeAreaView style={styles.submitView}>
+            <TouchableOpacity
+              style={styles.submitBtn}
+              onPress={() => {
+                navigation.navigate('ContactList');
+              }}>
+              <Text style={styles.submitText}>Continue</Text>
+            </TouchableOpacity>
+          </SafeAreaView>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 
 export default ContactInfo;
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  scrollView: {
-    minHeight: deviceHeight,
-    backgroundColor: white,
-    paddingBottom: 100,
-  },
-  box: {
-    paddingLeft: 15,
-    paddingRight: 15,
-    paddingBottom: 60,
-  },
   avatarView: {
     alignItems: 'center',
     marginTop: 10,
@@ -294,5 +281,5 @@ const styles = StyleSheet.create({
     backgroundColor: primaryMain,
     borderRadius: 32,
   },
-  submitView: {padding: 20, marginBottom: 30, marginTop: 0},
+  submitView: {padding: 20, marginBottom: 0, marginTop: 0},
 });

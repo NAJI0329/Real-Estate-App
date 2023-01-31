@@ -1,11 +1,9 @@
 import {StyleSheet} from 'react-native';
 import {white} from './colors';
-import {deviceHeight, deviceWidth} from './responsive';
 
 const g_styles = StyleSheet.create({
   container: {
-    height: deviceHeight,
-    width: deviceWidth,
+    flex: 1,
     backgroundColor: white,
   },
   box: {
