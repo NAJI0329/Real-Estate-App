@@ -7,7 +7,7 @@ const MainActionButton = ({text, onPress, isDisable = false, bgColor}) => {
     submitView: {
       padding: 15,
       paddingBottom: 40,
-      flex: Platform.OS === 'ios' ? 0.17 : 0,
+      flex: Platform.OS === 'ios' ? 0.45 : 0,
     },
     submitText: {
       textAlign: 'center',
