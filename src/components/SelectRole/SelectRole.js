@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import {Text, View, StyleSheet, SafeAreaView} from 'react-native';
+import {Text, View, StyleSheet} from 'react-native';
 import g_styles from '../../ui/common/styles';
 import {ScrollView} from 'react-native-gesture-handler';
 import {primaryMain} from '../../ui/common/colors';
 import RoleItem from './RoleItem';
 import MainActionButton from '../MainActionButton';
 import {useNavigation} from '@react-navigation/native';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 const SelectRole = () => {
   const navigation = useNavigation();
