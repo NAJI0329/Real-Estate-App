@@ -56,13 +56,11 @@ const SelectRole = () => {
           })}
         </View>
       </ScrollView>
-      <SafeAreaView edges={['bottom']}>
         <MainActionButton
           text={'Continue'}
           isDisable={isDisable}
           onPress={onContinue}
         />
-      </SafeAreaView>
     </View>
   );
 };
