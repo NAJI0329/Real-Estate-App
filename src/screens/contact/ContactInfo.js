@@ -1,4 +1,4 @@
-import React, {useState, useCallback} from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -19,21 +19,22 @@ import {deviceHeight} from '../../ui/common/responsive';
 import TopTitle from './../../components/TopTitle';
 import useFileSelector from '../../hooks/useFileSelector';
 import Dropdown from '../../components/common/Dropdown';
+import g_styles from '../../ui/common/styles';
 
 const Avatar = require('./../../../assets/images/large-avatar.png');
 
 const ContactInfo = ({navigation}) => {
   const {openImageLibrary} = useFileSelector();
 
-  const [rolesOpen, setRolesOpen] = useState(false);
-  const [rolesItems, setRolesItems] = useState([
-    {label: 'Seller', value: 'Seller'},
-    {label: 'Buyer', value: 'Buyer'},
-    {label: "Seller's Agent", value: "Seller's Agent"},
-    {label: "Buyer's Agent", value: "Buyer's Agent"},
-    {label: 'Loan Officer', value: 'Loan Officer'},
-  ]);
-  const [rolesValue, setRolesValue] = useState(rolesItems[0].value);
+  // const [rolesOpen, setRolesOpen] = useState(false);
+  // const [rolesItems, setRolesItems] = useState([
+  //   {label: 'Seller', value: 'Seller'},
+  //   {label: 'Buyer', value: 'Buyer'},
+  //   {label: "Seller's Agent", value: "Seller's Agent"},
+  //   {label: "Buyer's Agent", value: "Buyer's Agent"},
+  //   {label: 'Loan Officer', value: 'Loan Officer'},
+  // ]);
+  // const [rolesValue, setRolesValue] = useState(rolesItems[0].value);
 
   const [citiesOpen, setCitiesOpen] = useState(false);
   const [citiesItems, setCitiesItems] = useState([
@@ -94,7 +95,7 @@ const ContactInfo = ({navigation}) => {
               </TouchableOpacity>
             </View>
           </View>
-          <View style={{width: '50%', paddingLeft: 10, paddingRight: 10}}>
+          {/* <View style={{width: '50%', paddingLeft: 10, paddingRight: 10}}>
             <Text style={styles.label}>Assign Role</Text>
             <Dropdown
               open={rolesOpen}
@@ -104,8 +105,8 @@ const ContactInfo = ({navigation}) => {
               setValue={setRolesValue}
               setItems={setRolesItems}
             />
-          </View>
-          <View style={{flexDirection: 'row'}}>
+          </View> */}
+          <View style={g_styles.flex}>
             <View style={{width: '50%', paddingLeft: 10, paddingRight: 10}}>
               <Text style={styles.label}>First Name</Text>
               <TextInput

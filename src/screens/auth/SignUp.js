@@ -2,16 +2,12 @@ import React, {useState} from 'react';
 import {
   View,
   Text,
-  TextInput,
   StyleSheet,
   TouchableOpacity,
   ScrollView,
   Platform,
   SafeAreaView,
 } from 'react-native';
-import CheckBox from '@react-native-community/checkbox';
-
-import Logo from '../../components/Logo';
 import {
   bigGray,
   color40,
@@ -27,9 +23,9 @@ import g_styles from '../../ui/common/styles';
 import GoogleSignButton from '../../components/auth/GoogleSignButton';
 import LogoSection from '../../components/auth/LogoSection';
 import Input from '../../components/auth/Input';
+import RememberMe from '../../components/auth/RememberMe';
 
 const SignUp = ({navigation}) => {
-  const [isRemember, setRemember] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [password2, setPassword2] = useState('');
@@ -43,7 +39,7 @@ const SignUp = ({navigation}) => {
       return false;
     }
     // navigation.navigate('AccessClosingRoom');
-    navigation.navigate('ContactInfo');
+    navigation.navigate('SelectRole');
   };
 
   return (
@@ -83,20 +79,7 @@ const SignUp = ({navigation}) => {
               error={errors?.setPassword2}
             />
             {/* Remember Me CheckBox */}
-            <View style={styles.rememberView}>
-              <CheckBox
-                tintColors={{true: primaryMain, false: softBlack}}
-                style={styles.rememberCheckBox}
-                disabled={false}
-                value={isRemember}
-                onValueChange={newValue => setRemember(newValue)}
-              />
-              <Text
-                style={styles.rememberText}
-                onPress={() => setRemember(!isRemember)}>
-                Remember me
-              </Text>
-            </View>
+            <RememberMe />
 
             <TouchableOpacity
               style={styles.submitView}
@@ -165,22 +148,6 @@ const styles = StyleSheet.create({
     paddingRight: 20,
     fontSize: 16,
     paddingVertical: Platform.OS === 'ios' ? 15 : 10,
-  },
-  rememberView: {
-    flexDirection: 'row',
-    marginLeft: 10,
-    marginTop: 15,
-    alignItems: 'center',
-  },
-  rememberCheckBox: {
-    marginLeft: Platform.OS === 'ios' ? 10 : 0,
-    marginRight: Platform.OS === 'ios' ? 20 : 0,
-  },
-  rememberText: {
-    color: softGray,
-    fontSize: 14,
-    fontWeight: '500',
-    lineHeight: 20,
   },
   submitView: {
     backgroundColor: primaryMain,
