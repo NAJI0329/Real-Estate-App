@@ -38,5 +38,6 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: '500',
     lineHeight: 20,
+    height: 40,
   },
 });
