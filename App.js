@@ -341,7 +341,7 @@ const App = () => {
     <MenuProvider>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName="Splash"
+          initialRouteName="SelectRole"
           screenOptions={{
             headerShown: false,
             presentation: 'modal',

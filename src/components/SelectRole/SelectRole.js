@@ -16,8 +16,8 @@ const SelectRole = () => {
     'Seller',
     "Seller's Agent",
     'Buyer',
-    "Buyer's Agent",
-    'Loan Officer',
+    // "Buyer's Agent",
+    // 'Loan Officer',
   ];
 
   const [isDisable, setDisable] = useState(true);
