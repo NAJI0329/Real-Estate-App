@@ -56,11 +56,11 @@ const SelectRole = () => {
           })}
         </View>
       </ScrollView>
-        <MainActionButton
-          text={'Continue'}
-          isDisable={isDisable}
-          onPress={onContinue}
-        />
+      <MainActionButton
+        text={'Continue'}
+        isDisable={isDisable}
+        onPress={onContinue}
+      />
     </View>
   );
 };
