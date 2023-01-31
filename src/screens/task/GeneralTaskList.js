@@ -58,14 +58,12 @@ const GeneralTaskList = () => {
           isClose={false}
         />
         <View style={g_styles.box}>
-          <SearchInput placeholder={'Search chats'} />
+          <SearchInput placeholder={'Search tasks by address'} />
         </View>
-        <ScrollView style={g_styles.box}>
-          <FlatList
-            style={g_styles.mt_16}
-            data={items}
-            renderItem={({item}) => <GeneralTaskItem row={item} />}
-          />
+        <ScrollView style={[g_styles.box, g_styles.py_16]}>
+          {items.map((row, key) => {
+            return <GeneralTaskItem row={row} key={key} />;
+          })}
         </ScrollView>
         <TaskRoomBottomMenu />
       </View>
