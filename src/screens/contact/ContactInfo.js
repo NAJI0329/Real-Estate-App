@@ -20,6 +20,7 @@ import TopTitle from './../../components/TopTitle';
 import useFileSelector from '../../hooks/useFileSelector';
 import Dropdown from '../../components/common/Dropdown';
 import g_styles from '../../ui/common/styles';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 const Avatar = require('./../../../assets/images/large-avatar.png');
 
@@ -205,7 +206,7 @@ const ContactInfo = ({navigation}) => {
               />
             </View>
           </View>
-          <View style={styles.submitView}>
+          <SafeAreaView style={styles.submitView}>
             <TouchableOpacity
               style={styles.submitBtn}
               onPress={() => {
@@ -213,7 +214,7 @@ const ContactInfo = ({navigation}) => {
               }}>
               <Text style={styles.submitText}>Continue</Text>
             </TouchableOpacity>
-          </View>
+          </SafeAreaView>
         </View>
       </ScrollView>
     </View>
@@ -291,5 +292,5 @@ const styles = StyleSheet.create({
     backgroundColor: primaryMain,
     borderRadius: 32,
   },
-  submitView: {padding: 20, marginBottom: 30, marginTop: 20},
+  submitView: {padding: 20, marginBottom: 30, marginTop: 0},
 });
