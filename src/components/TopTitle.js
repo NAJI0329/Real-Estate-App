@@ -1,8 +1,9 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import {Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 
 import {useNavigation} from '@react-navigation/native';
 import {bigBlack, white} from '../ui/common/colors';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 const leftArrow = require('./../../assets/images/left.png');
 
@@ -10,7 +11,7 @@ const TopTitle = ({title, prevPath, closePath, isClose = true}) => {
   const navigation = useNavigation();
 
   return (
-    <View style={styles.view}>
+    <SafeAreaView edges={['top']} style={styles.view}>
       <TouchableOpacity onPress={() => navigation.navigate(prevPath)}>
         <Image source={leftArrow} style={styles.leftArrow} />
       </TouchableOpacity>
@@ -22,7 +23,7 @@ const TopTitle = ({title, prevPath, closePath, isClose = true}) => {
       ) : (
         <Text> </Text>
       )}
-    </View>
+    </SafeAreaView>
   );
 };
 

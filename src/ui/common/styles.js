@@ -17,6 +17,7 @@ const g_styles = StyleSheet.create({
   itemsStart: {alignItems: 'flex-start'},
   justifyBetween: {justifyContent: 'space-between'},
   justifyCenter: {justifyContent: 'center'},
+  px_10: {paddingHorizontal: 10},
   py_24: {paddingVertical: 24},
   py_10: {paddingVertical: 10},
   py_16: {paddingVertical: 16},
@@ -42,7 +43,9 @@ const g_styles = StyleSheet.create({
   mr_20: {marginRight: 20},
   h_half: {height: '50%'},
   h_full: {height: '100%'},
+  w_p30: {width: '30%'},
   w_half: {width: '50%'},
+  w_p70: {width: '70%'},
   w_full: {width: '100%'},
 });
 

@@ -107,61 +107,61 @@ const ContactInfo = ({navigation}) => {
             />
           </View> */}
           <View style={g_styles.flex}>
-            <View style={{width: '50%', paddingLeft: 10, paddingRight: 10}}>
+            <View style={[g_styles.w_half, g_styles.px_10]}>
               <Text style={styles.label}>First Name</Text>
               <TextInput
-                style={styles.selectBox}
+                style={styles.TextInput}
                 onChangeText={setFullname}
                 value={fullname}
               />
             </View>
-            <View style={{width: '50%', paddingLeft: 10, paddingRight: 10}}>
+            <View style={[g_styles.w_half, g_styles.px_10]}>
               <Text style={styles.label}>Last Name</Text>
               <TextInput
-                style={styles.selectBox}
+                style={styles.TextInput}
                 onChangeText={setLastname}
                 value={lastname}
               />
             </View>
           </View>
-          <View style={{width: '100%', paddingLeft: 10, paddingRight: 10}}>
+          <View style={[g_styles.w_full, g_styles.px_10]}>
             <Text style={styles.label}>Email</Text>
             <TextInput
-              style={styles.selectBox}
+              style={styles.TextInput}
               onChangeText={setEmail}
               value={email}
             />
           </View>
-          <View style={{width: '50%', paddingLeft: 10, paddingRight: 10}}>
+          <View style={[g_styles.w_half, g_styles.px_10]}>
             <Text style={styles.label}>Phone</Text>
             <TextInput
-              style={styles.selectBox}
+              style={styles.TextInput}
               onChangeText={setPhone}
               value={phone}
             />
           </View>
-          <View style={{width: '100%', paddingLeft: 10, paddingRight: 10}}>
+          <View style={[g_styles.w_full, g_styles.px_10]}>
             <Text style={styles.label}>
               Addres Line #1 (Street Address, P.O Box)
             </Text>
             <TextInput
-              style={styles.selectBox}
+              style={styles.TextInput}
               onChangeText={setAddress}
               value={address}
             />
           </View>
-          <View style={{width: '100%', paddingLeft: 10, paddingRight: 10}}>
+          <View style={[g_styles.w_full, g_styles.px_10]}>
             <Text style={styles.label}>
               Addres Line #2 (Apartment, sute, unit, building, floor, etc.)
             </Text>
             <TextInput
-              style={styles.selectBox}
+              style={styles.TextInput}
               onChangeText={setAddress2}
               value={address2}
             />
           </View>
-          <View style={{flexDirection: 'row'}}>
-            <View style={{width: '50%', paddingLeft: 10, paddingRight: 10}}>
+          <View style={g_styles.flex}>
+            <View style={[g_styles.w_half, g_styles.px_10]}>
               <Text style={styles.label}>City</Text>
               <Dropdown
                 open={citiesOpen}
@@ -170,10 +170,9 @@ const ContactInfo = ({navigation}) => {
                 setOpen={setCitiesOpen}
                 setValue={setCitiesValue}
                 setItems={setCitiesItems}
-                dropDownDirection="TOP"
               />
             </View>
-            <View style={{width: '50%', paddingLeft: 10, paddingRight: 10}}>
+            <View style={[g_styles.w_half, g_styles.px_10]}>
               <Text style={styles.label}>State</Text>
               <Dropdown
                 open={statesOpen}
@@ -182,20 +181,19 @@ const ContactInfo = ({navigation}) => {
                 setOpen={setStatesOpen}
                 setValue={setStatesValue}
                 setItems={setStatesItems}
-                dropDownDirection="TOP"
               />
             </View>
           </View>
-          <View style={{flexDirection: 'row'}}>
-            <View style={{width: '30%', paddingLeft: 10, paddingRight: 10}}>
+          <View style={g_styles.flex}>
+            <View style={[g_styles.w_p30, g_styles.px_10]}>
               <Text style={styles.label}>Zip/Code</Text>
               <TextInput
-                style={styles.selectBox}
+                style={styles.TextInput}
                 onChangeText={setZipCode}
                 value={zipCode}
               />
             </View>
-            <View style={{width: '70%', paddingLeft: 10, paddingRight: 10}}>
+            <View style={[g_styles.w_p70, g_styles.px_10]}>
               <Text style={styles.label}>Country</Text>
               <Dropdown
                 open={countriesOpen}
@@ -204,7 +202,6 @@ const ContactInfo = ({navigation}) => {
                 setOpen={setCountriesOpen}
                 setValue={setCountriesValue}
                 setItems={setCountriesItems}
-                dropDownDirection="TOP"
               />
             </View>
           </View>
@@ -274,13 +271,14 @@ const styles = StyleSheet.create({
     marginTop: 15,
     // marginLeft: 20,
   },
-  selectBox: {
+  TextInput: {
     borderRadius: 100,
     borderColor: color20,
     borderWidth: 1,
     paddingLeft: 20,
     marginTop: 5,
     backgroundColor: white,
+    height: 50,
   },
   submitText: {
     textAlign: 'center',
