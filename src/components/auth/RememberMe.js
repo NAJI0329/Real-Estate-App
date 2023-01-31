@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import CheckBox from '@react-native-community/checkbox';
 import {StyleSheet, Text, View, Platform} from 'react-native';
-import {primaryMain, softBlack, softGray} from '../../ui/common/colors';
+import {primaryMain, softBlack, softGray, white} from '../../ui/common/colors';
 
 const RememberMe = () => {
   const [isRemember, setRemember] = useState(false);
@@ -13,6 +13,8 @@ const RememberMe = () => {
         style={styles.rememberCheckBox}
         disabled={false}
         boxType={'square'}
+        onFillColor={softBlack}
+        onCheckColor={white}
         value={isRemember}
         onValueChange={newValue => setRemember(newValue)}
       />
