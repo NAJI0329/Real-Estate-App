@@ -33,7 +33,7 @@ const SelectRole = () => {
   };
 
   return (
-    <SafeAreaView>
+    <SafeAreaView edge={['bottom']}>
       <View style={g_styles.container}>
         <View style={g_styles.box}>
           <Text style={styles.titleText}>
