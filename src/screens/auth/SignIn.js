@@ -8,7 +8,6 @@ import {
   Platform,
   SafeAreaView,
 } from 'react-native';
-import CheckBox from '@react-native-community/checkbox';
 import {
   bigGray,
   primaryMain,
@@ -23,9 +22,9 @@ import GoogleSignButton from '../../components/auth/GoogleSignButton';
 import g_styles from '../../ui/common/styles';
 import LogoSection from '../../components/auth/LogoSection';
 import Input from '../../components/auth/Input';
+import RememberMe from '../../components/auth/RememberMe';
 
 const SignIn = ({navigation}) => {
-  const [isRemember, setRemember] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({
@@ -91,20 +90,7 @@ const SignIn = ({navigation}) => {
               error={errors?.password}
             />
             {/* Remember Me CheckBox */}
-            <View style={styles.rememberView}>
-              <CheckBox
-                tintColors={{true: primaryMain, false: softBlack}}
-                style={styles.rememberCheckBox}
-                disabled={false}
-                value={isRemember}
-                onValueChange={newValue => setRemember(newValue)}
-              />
-              <Text
-                style={styles.rememberText}
-                onPress={() => setRemember(!isRemember)}>
-                Remember me
-              </Text>
-            </View>
+            <RememberMe />
             <TouchableOpacity
               style={styles.submitView}
               onPress={() => onSubmit()}>
@@ -153,21 +139,6 @@ const styles = StyleSheet.create({
     maxWidth: 300,
     textAlign: 'center',
     fontWeight: '700',
-  },
-  rememberView: {
-    flexDirection: 'row',
-    marginLeft: 10,
-    marginTop: 15,
-    alignItems: 'center',
-  },
-  rememberCheckBox: {
-    marginLeft: Platform.OS === 'ios' ? 10 : 0,
-    marginRight: Platform.OS === 'ios' ? 20 : 0,
-  },
-  rememberText: {
-    color: softGray,
-    fontSize: 14,
-    fontWeight: '500',
   },
   submitView: {
     backgroundColor: primaryMain,

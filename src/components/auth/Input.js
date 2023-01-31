@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 20,
     fontSize: 16,
+    height: 48,
     paddingVertical: Platform.OS === 'ios' ? 15 : 10,
   },
   errorBorder: {
