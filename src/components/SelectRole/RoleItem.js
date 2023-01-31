@@ -1,17 +1,32 @@
 import React from 'react';
 import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
+import {Shadow} from 'react-native-shadow-2';
 
-import {secondaryMain, color38, color35, color29} from '../../ui/common/colors';
+import {
+  secondaryMain,
+  color38,
+  color35,
+  color29,
+  white,
+} from '../../ui/common/colors';
+import g_styles from '../../ui/common/styles';
 
 const RoleItem = ({row, setSelectedRole, selectedRole}) => {
   return (
     <TouchableOpacity
+      style={g_styles.my_10}
       onPress={() => {
         setSelectedRole(row);
       }}>
-      <View style={[styles.itemBox, selectedRole === row && styles.selected]}>
-        <Text style={styles.text}>{row}</Text>
-      </View>
+      <Shadow
+        distance={2}
+        offset={[0, 2]}
+        startColor={'#00000010'}
+        style={styles.itemBox}>
+        <View style={[selectedRole === row && styles.selected]}>
+          <Text style={styles.text}>{row}</Text>
+        </View>
+      </Shadow>
     </TouchableOpacity>
   );
 };
@@ -23,8 +38,9 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     borderColor: secondaryMain,
     borderWidth: 1,
-    marginVertical: 10,
     paddingVertical: 23,
+    width: '100%',
+    backgroundColor: white,
   },
   selected: {
     borderColor: color35,
