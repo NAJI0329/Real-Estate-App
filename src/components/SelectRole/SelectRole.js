@@ -35,11 +35,13 @@ const SelectRole = () => {
   return (
     <SafeAreaView>
       <View style={g_styles.container}>
-        <ScrollView style={g_styles.box}>
+        <View style={g_styles.box}>
           <Text style={styles.titleText}>
             What’s your role in the transaction?
           </Text>
-          <View>
+        </View>
+        <ScrollView>
+          <View style={g_styles.box}>
             {roles.map((row, key) => {
               return (
                 <RoleItem
