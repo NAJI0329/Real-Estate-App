@@ -34,34 +34,36 @@ const SelectRole = () => {
   };
 
   return (
-    <SafeAreaView>
-      <View style={g_styles.container}>
+    <View style={g_styles.container}>
+      <SafeAreaView edges={['top']}>
         <View style={g_styles.box}>
           <Text style={styles.titleText}>
             What’s your role in the transaction?
           </Text>
         </View>
-        <ScrollView>
-          <View style={g_styles.box}>
-            {roles.map((row, key) => {
-              return (
-                <RoleItem
-                  key={key}
-                  row={row}
-                  selectedRole={selectedRole}
-                  setSelectedRole={setSelectedRole}
-                />
-              );
-            })}
-          </View>
-        </ScrollView>
+      </SafeAreaView>
+      <ScrollView>
+        <View style={g_styles.box}>
+          {roles.map((row, key) => {
+            return (
+              <RoleItem
+                key={key}
+                row={row}
+                selectedRole={selectedRole}
+                setSelectedRole={setSelectedRole}
+              />
+            );
+          })}
+        </View>
+      </ScrollView>
+      <SafeAreaView edges={['bottom']}>
         <MainActionButton
           text={'Continue'}
           isDisable={isDisable}
           onPress={onContinue}
         />
-      </View>
-    </SafeAreaView>
+      </SafeAreaView>
+    </View>
   );
 };
 
