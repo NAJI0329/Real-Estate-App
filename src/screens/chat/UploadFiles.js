@@ -7,12 +7,15 @@ import {
   Text,
   TouchableOpacity,
   Image,
+  SafeAreaView,
 } from 'react-native';
 import TopTitle from '../../components/TopTitle';
 import {color29, primaryMain, white} from '../../ui/common/colors';
 
 import {deviceHeight} from '../../ui/common/responsive';
 import FileItem from '../../components/chat/FileItem';
+import g_styles from '../../ui/common/styles';
+import MainActionButton from '../../components/MainActionButton';
 
 const documentImg = require('./../../../assets/images/item4.png');
 
@@ -46,8 +49,12 @@ const UploadFiles = ({navigation}) => {
   ]);
 
   return (
-    <View style={styles.container}>
-      <TopTitle title={'Upload Files'} prevPath={'ChatBox'} />
+    <SafeAreaView style={g_styles.container}>
+      <TopTitle
+        title={'Upload Files'}
+        prevPath={'ChatBox'}
+        closePath={'SignIn'}
+      />
       <View style={styles.searchView}>
         <Image source={documentImg} />
         <Text style={styles.searchText}>Search other documents</Text>
@@ -59,24 +66,17 @@ const UploadFiles = ({navigation}) => {
           })}
         </View>
       </ScrollView>
-      <View style={styles.submitView}>
-        <TouchableOpacity
-          style={styles.submitBtn}
-          onPress={() => navigation.navigate('ChatBox')}>
-          <Text style={styles.submitText}>Upload File</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
+      <MainActionButton
+        text={'Upload File'}
+        onPress={() => navigation.navigate('ChatBox')}
+      />
+    </SafeAreaView>
   );
 };
 
 export default UploadFiles;
 
 const styles = StyleSheet.create({
-  container: {
-    height: deviceHeight,
-    backgroundColor: white,
-  },
   searchView: {
     backgroundColor: color29,
     flexDirection: 'row',
