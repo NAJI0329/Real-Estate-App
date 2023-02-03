@@ -60,7 +60,7 @@ const UploadFiles = ({navigation}) => {
         <Text style={styles.searchText}>Search other documents</Text>
       </View>
       <ScrollView>
-        <View style={styles.box}>
+        <View style={g_styles.box}>
           {files.map((row, key) => {
             return <FileItem row={row} key={key} />;
           })}
@@ -89,25 +89,5 @@ const styles = StyleSheet.create({
     lineHeight: 24,
     fontWeight: '500',
     paddingLeft: 10,
-  },
-  box: {
-    paddingRight: 20,
-    paddingLeft: 20,
-  },
-  submitView: {
-    padding: 20,
-    backgroundColor: 'transparent',
-  },
-  submitText: {
-    textAlign: 'center',
-    color: white,
-    fontWeight: '700',
-    fontSize: 18,
-  },
-  submitBtn: {
-    backgroundColor: primaryMain,
-    padding: 20,
-    borderRadius: 32,
-    marginBottom: 25,
   },
 });
