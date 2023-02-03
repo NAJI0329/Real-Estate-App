@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text, StyleSheet, TouchableOpacity, Platform} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import {View} from 'react-native-safe-area-context';
 import {color19, primaryMain, white} from '../ui/common/colors';
 
 const MainActionButton = ({text, onPress, isDisable = false, bgColor}) => {
@@ -8,7 +8,6 @@ const MainActionButton = ({text, onPress, isDisable = false, bgColor}) => {
     submitView: {
       padding: 15,
       paddingBottom: Platform.OS === 'ios' ? 0 : 15,
-      backgroundColor: 'green',
     },
     submitText: {
       textAlign: 'center',
@@ -27,7 +26,7 @@ const MainActionButton = ({text, onPress, isDisable = false, bgColor}) => {
   });
 
   return (
-    <SafeAreaView edges={['bottom']} style={styles.submitView}>
+    <View style={styles.submitView}>
       <TouchableOpacity
         style={[styles.submitBtn, isDisable && styles.disableButton]}
         onPress={() => {
@@ -37,7 +36,7 @@ const MainActionButton = ({text, onPress, isDisable = false, bgColor}) => {
         }}>
         <Text style={styles.submitText}>{text}</Text>
       </TouchableOpacity>
-    </SafeAreaView>
+    </View>
   );
 };
 
