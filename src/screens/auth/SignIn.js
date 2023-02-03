@@ -5,7 +5,6 @@ import {
   StyleSheet,
   TouchableOpacity,
   ScrollView,
-  Platform,
   SafeAreaView,
 } from 'react-native';
 import {
@@ -13,16 +12,14 @@ import {
   primaryMain,
   softBlack,
   softBlue,
-  softGray,
   white,
 } from '../../ui/common/colors';
-import {emailValidation} from '../../utils/emailValidation';
-
 import GoogleSignButton from '../../components/auth/GoogleSignButton';
 import g_styles from '../../ui/common/styles';
 import LogoSection from '../../components/auth/LogoSection';
 import Input from '../../components/auth/Input';
 import RememberMe from '../../components/auth/RememberMe';
+import {isEmail} from '../../utils';
 
 const SignIn = ({navigation}) => {
   const [email, setEmail] = useState('');
@@ -43,8 +40,8 @@ const SignIn = ({navigation}) => {
   const validation = () => {
     let tempErrors = {email: false, password: false};
     // Email Check
-    const isEmail = emailValidation(email);
-    if (!isEmail || email === '') {
+    const isEmailRes = isEmail(email);
+    if (!isEmailRes || email === '') {
       tempErrors.email = true;
     }
     // Password Check
@@ -62,8 +59,8 @@ const SignIn = ({navigation}) => {
   };
 
   return (
-    <SafeAreaView>
-      <ScrollView style={g_styles.container}>
+    <SafeAreaView style={g_styles.container}>
+      <ScrollView>
         <View style={g_styles.box}>
           {/* Logo */}
           <View style={g_styles.mt_70}>

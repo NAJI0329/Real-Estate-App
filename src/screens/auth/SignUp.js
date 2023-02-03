@@ -17,7 +17,7 @@ import {
   softGray,
   white,
 } from '../../ui/common/colors';
-import {emailValidation} from '../../utils/emailValidation';
+import {isEmail} from '../../utils';
 
 import g_styles from '../../ui/common/styles';
 import GoogleSignButton from '../../components/auth/GoogleSignButton';
@@ -33,8 +33,8 @@ const SignUp = ({navigation}) => {
 
   const onSubmit = async () => {
     setErrors(false);
-    const isEmail = emailValidation(email);
-    if (!isEmail || password === '') {
+    const isEmailRes = isEmail(email);
+    if (!isEmailRes || password === '') {
       setErrors(true);
       return false;
     }
@@ -43,8 +43,8 @@ const SignUp = ({navigation}) => {
   };
 
   return (
-    <SafeAreaView>
-      <ScrollView style={g_styles.container}>
+    <SafeAreaView style={g_styles.container}>
+      <ScrollView>
         <View style={g_styles.box}>
           {/* Logo */}
           <View style={g_styles.mt_70}>
