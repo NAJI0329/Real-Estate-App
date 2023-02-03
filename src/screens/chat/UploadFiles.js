@@ -59,7 +59,7 @@ const UploadFiles = ({navigation}) => {
         <Image source={documentImg} />
         <Text style={styles.searchText}>Search other documents</Text>
       </View>
-      <ScrollView>
+      <ScrollView style={{backgroundColor: 'red'}}>
         <View style={g_styles.box}>
           {files.map((row, key) => {
             return <FileItem row={row} key={key} />;

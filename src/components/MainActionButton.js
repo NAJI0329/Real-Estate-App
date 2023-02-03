@@ -8,6 +8,7 @@ const MainActionButton = ({text, onPress, isDisable = false, bgColor}) => {
     submitView: {
       padding: 15,
       paddingBottom: Platform.OS === 'ios' ? 0 : 15,
+      backgroundColor: 'green',
     },
     submitText: {
       textAlign: 'center',
