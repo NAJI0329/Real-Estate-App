@@ -11,7 +11,6 @@ import {useNavigation} from '@react-navigation/native';
 import {
   color18,
   color23,
-  color25,
   color26,
   color29,
   color45,
@@ -55,7 +54,7 @@ const TransactionItem = ({row}) => {
     },
     label: {
       color: color18,
-      fontSize: Platform.OS === 'ios' ? 13 : 16,
+      fontSize: Platform.OS === 'ios' ? 14 : 16,
       fontWeight: '700',
       lineHeight: 20,
     },

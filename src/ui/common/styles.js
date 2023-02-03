@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {Platform, StyleSheet} from 'react-native';
 import {white} from './colors';
 
 const g_styles = StyleSheet.create({
@@ -7,8 +7,7 @@ const g_styles = StyleSheet.create({
     backgroundColor: white,
   },
   box: {
-    paddingLeft: 24,
-    paddingRight: 24,
+    paddingHorizontal: Platform.OS === 'ios' ? 15 : 24,
   },
   flex: {flexDirection: 'row'},
   itemsCenter: {alignItems: 'center'},
