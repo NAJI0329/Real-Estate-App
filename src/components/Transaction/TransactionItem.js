@@ -98,14 +98,14 @@ const TransactionItem = ({row}) => {
             </View>
           </View>
 
-          <View style={[g_styles.flex, g_styles.itemsStart, g_styles.mt_10]}>
+          <View style={[g_styles.flex, g_styles.itemsStart, g_styles.mt_5]}>
             <Image source={PriceIcon} style={[g_styles.mr_5, g_styles.mt_5]} />
             <View>
               <Text style={styles.label}>3,500,000</Text>
             </View>
           </View>
 
-          <View style={[g_styles.flex, g_styles.itemsStart, g_styles.mt_10]}>
+          <View style={[g_styles.flex, g_styles.itemsStart, g_styles.mt_5]}>
             <Image source={DayIcon} style={[g_styles.mr_5, g_styles.mt_5]} />
             <View>
               <Text style={styles.label}>Jan-19-2023, Wednesday</Text>
