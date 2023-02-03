@@ -55,7 +55,7 @@ const TransactionItem = ({row}) => {
     },
     label: {
       color: color18,
-      fontSize: Platform.OS === 'ios' ? 14 : 16,
+      fontSize: Platform.OS === 'ios' ? 13 : 16,
       fontWeight: '700',
       lineHeight: 20,
     },
@@ -86,7 +86,11 @@ const TransactionItem = ({row}) => {
             <Text> </Text>
           </View>
         </View>
-        <View style={[g_styles.px_16, g_styles.w_full]}>
+        <View
+          style={[
+            Platform.OS === 'ios' ? g_styles.px_10 : g_styles.px_16,
+            g_styles.w_full,
+          ]}>
           <View style={[g_styles.flex, g_styles.itemsStart]}>
             <Image
               source={AddressIcon}
