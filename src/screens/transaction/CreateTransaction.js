@@ -1,5 +1,12 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image, ScrollView} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  ScrollView,
+  SafeAreaView,
+} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import TopTitle from '../../components/TopTitle';
 import g_styles from '../../ui/common/styles';
@@ -16,7 +23,7 @@ const CreateTransaction = () => {
   };
 
   return (
-    <View style={g_styles.container}>
+    <SafeAreaView style={g_styles.container}>
       <TopTitle
         title={'Create Transaction'}
         prevPath={'TransactionRoom'}
@@ -34,7 +41,7 @@ const CreateTransaction = () => {
         </View>
       </ScrollView>
       <MainActionButton text={'Upload Contract'} onPress={onPress} />
-    </View>
+    </SafeAreaView>
   );
 };
 
