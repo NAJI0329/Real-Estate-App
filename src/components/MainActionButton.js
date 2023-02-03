@@ -1,6 +1,5 @@
 import React from 'react';
-import {Text, StyleSheet, TouchableOpacity, Platform} from 'react-native';
-import {View} from 'react-native-safe-area-context';
+import {Text, View, StyleSheet, TouchableOpacity, Platform} from 'react-native';
 import {color19, primaryMain, white} from '../ui/common/colors';
 
 const MainActionButton = ({text, onPress, isDisable = false, bgColor}) => {
