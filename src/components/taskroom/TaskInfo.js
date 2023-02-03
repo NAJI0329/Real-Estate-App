@@ -21,14 +21,14 @@ const TaskInfo = () => {
         </Text>
         <Text style={styles.label}>Deadline</Text>
         <View style={[g_styles.flex]}>
-          <View style={g_styles.w_half}>
+          <View style={g_styles.w_p50}>
             <Text style={styles.subLabel}>End Date</Text>
             <View style={[g_styles.flex, g_styles.itemsCenter, g_styles.mt_5]}>
               <Image source={CalendarIcon} style={g_styles.mx_10} />
               <Text style={styles.subText}>27/01/23</Text>
             </View>
           </View>
-          <View style={g_styles.w_half}>
+          <View style={g_styles.w_p50}>
             <Text style={styles.subLabel}>Deadline Hour</Text>
             <View style={[g_styles.flex, g_styles.itemsCenter, g_styles.mt_5]}>
               <Image source={TimeIcon} style={g_styles.mx_10} />

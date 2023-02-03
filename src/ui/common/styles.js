@@ -47,9 +47,10 @@ const g_styles = StyleSheet.create({
   h_half: {height: '50%'},
   h_full: {height: '100%'},
   w_p30: {width: '30%'},
-  w_half: {width: '50%'},
+  w_p50: {width: '50%'},
   w_p70: {width: '70%'},
-  w_full: {width: '100%'},
+  w_p100: {width: '100%'},
+  w_full: {flex: 1},
 });
 
 export default g_styles;

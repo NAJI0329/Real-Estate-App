@@ -86,7 +86,7 @@ const TransactionItem = ({row}) => {
             <Text> </Text>
           </View>
         </View>
-        <View style={g_styles.p_16}>
+        <View style={[g_styles.p_16, g_styles.w_full]}>
           <View style={[g_styles.flex, g_styles.itemsStart]}>
             <Image
               source={AddressIcon}
