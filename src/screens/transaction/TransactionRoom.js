@@ -7,6 +7,7 @@ import {
   ScrollView,
   Image,
   TouchableOpacity,
+  SafeAreaView,
 } from 'react-native';
 import {black1, white} from '../../ui/common/colors';
 import UnlockifyNav from '../../components/UnlocakifyNav';
@@ -61,7 +62,7 @@ const TransactionRoom = () => {
   const [type, setType] = useState(types[0]);
 
   return (
-    <View style={g_styles.container}>
+    <SafeAreaView style={g_styles.container}>
       <UnlockifyNav title="Simple Deeds" />
       <ScrollView>
         <View style={g_styles.box}>
@@ -98,7 +99,7 @@ const TransactionRoom = () => {
         </View>
       </ScrollView>
       <TransactionRoomBottomMenu />
-    </View>
+    </SafeAreaView>
   );
 };
 
