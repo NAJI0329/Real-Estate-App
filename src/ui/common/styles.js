@@ -15,6 +15,7 @@ const g_styles = StyleSheet.create({
   itemsStart: {alignItems: 'flex-start'},
   justifyBetween: {justifyContent: 'space-between'},
   justifyCenter: {justifyContent: 'center'},
+  p_16: {padding: 16},
   px_10: {paddingHorizontal: 10},
   py_24: {paddingVertical: 24},
   py_10: {paddingVertical: 10},

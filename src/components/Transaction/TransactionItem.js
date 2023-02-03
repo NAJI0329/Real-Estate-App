@@ -45,7 +45,6 @@ const TransactionItem = ({row}) => {
       backgroundColor: color23,
       height: 135,
       width: 135,
-      marginRight: 15,
     },
     label: {
       color: color18,
@@ -87,7 +86,7 @@ const TransactionItem = ({row}) => {
             <Text> </Text>
           </View>
         </View>
-        <View>
+        <View style={g_styles.p_16}>
           <View style={[g_styles.flex, g_styles.itemsStart]}>
             <Image
               source={AddressIcon}
@@ -99,14 +98,14 @@ const TransactionItem = ({row}) => {
             </View>
           </View>
 
-          <View style={[g_styles.flex, g_styles.itemsStart, g_styles.mt_5]}>
+          <View style={[g_styles.flex, g_styles.itemsStart, g_styles.mt_10]}>
             <Image source={PriceIcon} style={[g_styles.mr_5, g_styles.mt_5]} />
             <View>
               <Text style={styles.label}>3,500,000</Text>
             </View>
           </View>
 
-          <View style={[g_styles.flex, g_styles.itemsStart, g_styles.mt_5]}>
+          <View style={[g_styles.flex, g_styles.itemsStart, g_styles.mt_10]}>
             <Image source={DayIcon} style={[g_styles.mr_5, g_styles.mt_5]} />
             <View>
               <Text style={styles.label}>Jan-19-2023, Wednesday</Text>
