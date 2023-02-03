@@ -1,5 +1,12 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+  Platform,
+} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {
   color18,
@@ -48,21 +55,14 @@ const TransactionItem = ({row}) => {
     },
     label: {
       color: color18,
-      fontSize: 16,
+      fontSize: Platform.OS === 'ios' ? 14 : 16,
       fontWeight: '700',
       lineHeight: 20,
     },
     text: {
-      fontSize: 14,
+      fontSize: Platform.OS === 'ios' ? 12 : 14,
       fontWeight: '400',
       lineHeight: 18,
-    },
-    address: {
-      color: color25,
-      fontSize: 12,
-      fontWeight: '400',
-      lineHeight: 18,
-      maxWidth: 80,
     },
     status: {
       position: 'absolute',
