@@ -18,6 +18,7 @@ const g_styles = StyleSheet.create({
   p_16: {padding: 16},
   px_10: {paddingHorizontal: 10},
   px_16: {paddingHorizontal: 16},
+  py_5: {paddingVertical: 5},
   py_24: {paddingVertical: 24},
   py_10: {paddingVertical: 10},
   py_16: {paddingVertical: 16},
@@ -52,7 +53,7 @@ const g_styles = StyleSheet.create({
   w_p50: {width: '50%'},
   w_p70: {width: '70%'},
   w_p100: {width: '100%'},
-  w_full: {flex: 1},
+  flex_1: {flex: 1},
 });
 
 export default g_styles;

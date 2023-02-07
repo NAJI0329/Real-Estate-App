@@ -70,48 +70,35 @@ const ConfirmInformation = ({navigation}) => {
     },
   ];
   return (
-    <SafeAreaView>
-      <View style={[styles.view, g_styles.container]}>
-        <TopTitle
-          title={'Confirm Information'}
-          prevPath={'SignUp'}
-          closePath="SignUp"
-        />
-        <View style={[styles.middle_view, g_styles.box]}>
-          <Text style={styles.infoText}>Transaction Information</Text>
+    <SafeAreaView style={g_styles.container}>
+      <TopTitle
+        title={'Confirm Information'}
+        prevPath={'SignUp'}
+        closePath="SignUp"
+      />
+      <View style={[g_styles.flex_1, g_styles.box]}>
+        <Text style={styles.infoText}>Transaction Information</Text>
 
-          <FlatList
-            data={items}
-            renderItem={({item}) => (
-              <TransactionInfoItem
-                icon={item.icon}
-                title={item.title}
-                content={item.content}
-                subContent={item.subContent}
-                active={item.active}
-                linkPath={item.linkPath}
-                editPath={item.editPath}
-              />
-            )}
-          />
-          {/* <TransactionInfoItem
-            icon={icon2}
-            title={'Legal Number'}
-            content={'#398239482348273487'}
-            linkPath={''}
-          /> */}
-          {/* <TransactionInfoItem
-            icon={icon4}
-            title={'Type of order'}
-            content={'1/4 Family'}
-            linkPath={''}
-          /> */}
-        </View>
-        <MainActionButton
-          text={'Continue'}
-          onPress={() => navigation.navigate('ContactList')}
+        <FlatList
+          data={items}
+          style={g_styles.py_5}
+          renderItem={({item}) => (
+            <TransactionInfoItem
+              icon={item.icon}
+              title={item.title}
+              content={item.content}
+              subContent={item.subContent}
+              active={item.active}
+              linkPath={item.linkPath}
+              editPath={item.editPath}
+            />
+          )}
         />
       </View>
+      <MainActionButton
+        text={'Continue'}
+        onPress={() => navigation.navigate('ContactList')}
+      />
     </SafeAreaView>
   );
 };
@@ -119,30 +106,10 @@ const ConfirmInformation = ({navigation}) => {
 export default ConfirmInformation;
 
 const styles = StyleSheet.create({
-  view: {},
-  middle_view: {
-    flex: 1,
-  },
   infoText: {
     color: primaryMain,
     fontSize: 18,
     fontWeight: '700',
     marginBottom: 10,
-  },
-  submitText: {
-    textAlign: 'center',
-    color: white,
-    fontWeight: '700',
-    fontSize: 18,
-  },
-  submitView: {
-    marginBottom: 60,
-  },
-  submitBtn: {
-    backgroundColor: primaryMain,
-    padding: 20,
-    borderRadius: 32,
-    marginTop: 25,
-    marginBottom: 25,
   },
 });

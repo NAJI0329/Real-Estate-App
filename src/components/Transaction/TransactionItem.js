@@ -88,7 +88,7 @@ const TransactionItem = ({row}) => {
         <View
           style={[
             Platform.OS === 'ios' ? g_styles.px_10 : g_styles.px_16,
-            g_styles.w_full,
+            g_styles.flex_1,
           ]}>
           <View style={[g_styles.flex, g_styles.itemsStart]}>
             <Image
