@@ -9,6 +9,7 @@ import {
   ScrollView,
   Image,
   TouchableOpacity,
+  SafeAreaView,
 } from 'react-native';
 import TopTitle from '../../../components/TopTitle';
 import {
@@ -48,7 +49,7 @@ const EditClosingDate = () => {
   }, [endDate]);
 
   return (
-    <View style={g_styles.container}>
+    <SafeAreaView style={g_styles.container}>
       <TopTitle
         title={'Edit Closing Date'}
         prevPath={'ConfirmInformation'}
@@ -58,7 +59,7 @@ const EditClosingDate = () => {
         <View style={g_styles.box}>
           <Text style={styles.title}>Closing Date</Text>
           <View style={g_styles.flex}>
-            <View style={{width: '50%', paddingRight: 10}}>
+            <View style={[g_styles.w_p50, g_styles.pr_10]}>
               <Text style={styles.label}>End Date</Text>
               <TouchableOpacity
                 style={styles.inputBox}
@@ -88,7 +89,7 @@ const EditClosingDate = () => {
               />
             </View>
           </View>
-          <View style={{width: '50%', paddingRight: 10}}>
+          <View style={[g_styles.w_p50, g_styles.pr_10]}>
             <Text style={styles.label}>Deadline Hour</Text>
             <TouchableOpacity
               style={styles.inputBox}
@@ -127,7 +128,7 @@ const EditClosingDate = () => {
         </View>
       </ScrollView>
       <MainActionButton text={'Request Change'} bgColor={color46} />
-    </View>
+    </SafeAreaView>
   );
 };
 
