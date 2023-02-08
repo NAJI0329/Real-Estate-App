@@ -121,7 +121,7 @@ const EditAddress = ({navigation}) => {
                 value={zipCode}
               />
             </View>
-            <View style={[g_styles.w_p70, g_styles.pr_10]}>
+            <View style={[g_styles.w_p70, g_styles.pl_10]}>
               <Text style={styles.label}>Country</Text>
               <Dropdown
                 open={countriesOpen}
