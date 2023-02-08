@@ -71,7 +71,7 @@ const EditAddress = ({navigation}) => {
               Addres Line #1 (Street Address, P.O Box)
             </Text>
             <TextInput
-              style={styles.selectBox}
+              style={styles.TextInput}
               onChangeText={setAddress}
               value={address}
             />
@@ -81,7 +81,7 @@ const EditAddress = ({navigation}) => {
               Addres Line #2 (Apartment, sute, unit, building, floor, etc.)
             </Text>
             <TextInput
-              style={styles.selectBox}
+              style={styles.TextInput}
               onChangeText={setAddress2}
               value={address2}
             />
@@ -116,7 +116,7 @@ const EditAddress = ({navigation}) => {
             <View style={[g_styles.w_p30, g_styles.pr_10]}>
               <Text style={styles.label}>Zip/Code</Text>
               <TextInput
-                style={styles.selectBox}
+                style={styles.TextInput}
                 onChangeText={setZipCode}
                 value={zipCode}
               />
@@ -172,11 +172,13 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     marginBottom: 5,
   },
-  selectBox: {
+  TextInput: {
     borderRadius: 100,
     borderColor: color20,
     borderWidth: 1,
     paddingLeft: 20,
+    marginTop: 5,
     backgroundColor: white,
+    height: 50,
   },
 });
