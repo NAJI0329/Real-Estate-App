@@ -77,5 +77,6 @@ const styles = StyleSheet.create({
   },
   selectBox: {
     paddingLeft: 10,
+    height: 50,
   },
 });
