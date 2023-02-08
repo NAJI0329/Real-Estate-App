@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-
 import {
   View,
   Text,
@@ -7,15 +6,10 @@ import {
   ScrollView,
   TextInput,
   Image,
+  SafeAreaView,
 } from 'react-native';
 import TopTitle from '../../../components/TopTitle';
-import {
-  color20,
-  color46,
-  gray1,
-  primaryMain,
-  white,
-} from '../../../ui/common/colors';
+import {color20, color46, gray1, primaryMain} from '../../../ui/common/colors';
 
 import g_styles from '../../../ui/common/styles';
 import MainActionButton from '../../../components/MainActionButton';
@@ -26,7 +20,7 @@ const EditSalesPrice = ({navigation}) => {
   const [price, setPrice] = useState('$3,500,000');
 
   return (
-    <View style={g_styles.container}>
+    <SafeAreaView style={g_styles.container}>
       <TopTitle
         title={'Edit Sales Price'}
         prevPath={'ConfirmInformation'}
@@ -49,7 +43,7 @@ const EditSalesPrice = ({navigation}) => {
         </View>
       </ScrollView>
       <MainActionButton text={'Request Change'} bgColor={color46} />
-    </View>
+    </SafeAreaView>
   );
 };
 
