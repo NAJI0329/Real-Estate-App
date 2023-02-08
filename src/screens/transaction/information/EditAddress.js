@@ -1,6 +1,13 @@
 import React, {useState} from 'react';
 
-import {View, Text, StyleSheet, ScrollView, TextInput} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  TextInput,
+  SafeAreaView,
+} from 'react-native';
 import TopTitle from '../../../components/TopTitle';
 import {
   color20,
@@ -50,7 +57,7 @@ const EditAddress = ({navigation}) => {
   const [typesValue, setTypesValue] = useState(typesItems[0].value);
 
   return (
-    <View style={g_styles.container}>
+    <SafeAreaView style={g_styles.container}>
       <TopTitle
         title={'Edit Address '}
         prevPath={'ConfirmInformation'}
@@ -79,8 +86,8 @@ const EditAddress = ({navigation}) => {
               value={address2}
             />
           </View>
-          <View style={{flexDirection: 'row'}}>
-            <View style={{width: '50%', paddingRight: 10}}>
+          <View style={g_styles.flex}>
+            <View style={[g_styles.w_p50, g_styles.pr_10]}>
               <Text style={styles.label}>City</Text>
               <Dropdown
                 open={citiesOpen}
@@ -92,7 +99,7 @@ const EditAddress = ({navigation}) => {
                 dropDownDirection="TOP"
               />
             </View>
-            <View style={{width: '50%', paddingLeft: 10}}>
+            <View style={[g_styles.w_p50, g_styles.pl_10]}>
               <Text style={styles.label}>State</Text>
               <Dropdown
                 open={statesOpen}
@@ -105,8 +112,8 @@ const EditAddress = ({navigation}) => {
               />
             </View>
           </View>
-          <View style={{flexDirection: 'row'}}>
-            <View style={{width: '30%', paddingRight: 10}}>
+          <View style={g_styles.flex}>
+            <View style={[g_styles.w_p30, g_styles.pr_10]}>
               <Text style={styles.label}>Zip/Code</Text>
               <TextInput
                 style={styles.selectBox}
@@ -114,7 +121,7 @@ const EditAddress = ({navigation}) => {
                 value={zipCode}
               />
             </View>
-            <View style={{width: '70%', paddingLeft: 10}}>
+            <View style={[g_styles.w_p70, g_styles.pr_10]}>
               <Text style={styles.label}>Country</Text>
               <Dropdown
                 open={countriesOpen}
@@ -128,7 +135,7 @@ const EditAddress = ({navigation}) => {
             </View>
           </View>
           <Text style={[styles.title, g_styles.mt_20]}>Legal Description</Text>
-          <View style={{width: '50%'}}>
+          <View style={[g_styles.w_p50]}>
             <Text style={styles.label}>Type</Text>
             <Dropdown
               open={typesOpen}
@@ -143,7 +150,7 @@ const EditAddress = ({navigation}) => {
         </View>
       </ScrollView>
       <MainActionButton text={'Request Change'} bgColor={color46} />
-    </View>
+    </SafeAreaView>
   );
 };
 
