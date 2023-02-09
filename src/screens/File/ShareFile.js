@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   Image,
   SafeAreaView,
+  FlatList,
 } from 'react-native';
 import TopTitle from '../../components/TopTitle';
 import {color29, primaryMain, white} from '../../ui/common/colors';
@@ -64,7 +65,7 @@ const ShareFile = ({navigation}) => {
     },
   ]);
 
-  const [selectedUsers, setSelectedUsers] = useState([]);
+  const [selectedUsers, setSelectedUsers] = useState(['1', '2']);
 
   return (
     <SafeAreaView style={g_styles.container}>
@@ -73,20 +74,18 @@ const ShareFile = ({navigation}) => {
         <Image source={documentImg} />
         <Text style={styles.searchText}>Search the file with</Text>
       </View>
-      <ScrollView>
-        <View style={g_styles.box}>
-          {users.map((row, key) => {
-            return (
-              <ShareFileUserItem
-                row={row}
-                key={key}
-                selectedUsers={selectedUsers}
-                setSelectedUsers={setSelectedUsers}
-              />
-            );
-          })}
-        </View>
-      </ScrollView>
+
+      <FlatList
+        data={users}
+        style={[g_styles.box, g_styles.py_5]}
+        renderItem={({item}) => (
+          <ShareFileUserItem
+            row={item}
+            selectedUsers={selectedUsers}
+            setSelectedUsers={setSelectedUsers}
+          />
+        )}
+      />
       <MainActionButton
         text="Share File"
         onPress={() => navigation.navigate('ChatBox')}
