@@ -8,6 +8,50 @@ const UnSelectedCheckBox = require('./../../../assets/images/unselected-checkbox
 const SelectedCheckBox = require('./../../../assets/images/selected-checkbox.png');
 
 const ShareFileUserItem = ({row, setSelectedUsers, selectedUsers}) => {
+  const styles = StyleSheet.create({
+    view: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      borderRadius: 8,
+      padding: 20,
+      width: '100%',
+      position: 'relative',
+      backgroundColor: white,
+      opacity: selectedUsers.includes(row?.id) ? 1 : 0.7,
+    },
+    avatar: {
+      height: 48,
+      width: 48,
+      borderRadius: 100,
+      marginRight: 20,
+    },
+    role: {
+      color: color39,
+      fontWeight: '700',
+      fontSize: 14,
+      lineHeight: 20,
+      fontFamily: 'SF Pro Display',
+    },
+    name: {
+      color: color33,
+      fontSize: 20,
+      lineHeight: 32,
+      fontFamily: 'Inter',
+      fontWeight: '600',
+    },
+    email: {
+      color: color32,
+      fontSize: 14,
+      lineHeight: 20,
+      fontFamily: 'SF Pro Display',
+      fontWeight: '400',
+    },
+    checkView: {
+      position: 'absolute',
+      right: 20,
+    },
+  });
+
   return (
     <TouchableOpacity
       style={g_styles.my_10}
@@ -20,7 +64,11 @@ const ShareFileUserItem = ({row, setSelectedUsers, selectedUsers}) => {
           setSelectedUsers(selectedUsers);
         }
       }}>
-      <Shadow distance={2} offset={[0, 2]} style={styles.view}>
+      <Shadow
+        distance={3}
+        offset={[0, 3]}
+        startColor={'#00000010'}
+        style={styles.view}>
         <Image source={row.avatar} style={styles.avatar} />
         <View style={styles.textView}>
           <Text style={styles.role}>{row.role}</Text>
@@ -42,46 +90,3 @@ const ShareFileUserItem = ({row, setSelectedUsers, selectedUsers}) => {
 };
 
 export default ShareFileUserItem;
-
-const styles = StyleSheet.create({
-  view: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    borderRadius: 8,
-    padding: 20,
-    width: '100%',
-    position: 'relative',
-    backgroundColor: white,
-  },
-  avatar: {
-    height: 48,
-    width: 48,
-    borderRadius: 100,
-    marginRight: 20,
-  },
-  role: {
-    color: color39,
-    fontWeight: '700',
-    fontSize: 14,
-    lineHeight: 20,
-    fontFamily: 'SF Pro Display',
-  },
-  name: {
-    color: color33,
-    fontSize: 20,
-    lineHeight: 32,
-    fontFamily: 'Inter',
-    fontWeight: '600',
-  },
-  email: {
-    color: color32,
-    fontSize: 14,
-    lineHeight: 20,
-    fontFamily: 'SF Pro Display',
-    fontWeight: '400',
-  },
-  checkView: {
-    position: 'absolute',
-    right: 20,
-  },
-});

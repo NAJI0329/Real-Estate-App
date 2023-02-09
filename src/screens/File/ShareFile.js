@@ -7,6 +7,7 @@ import {
   Text,
   TouchableOpacity,
   Image,
+  SafeAreaView,
 } from 'react-native';
 import TopTitle from '../../components/TopTitle';
 import {color29, primaryMain, white} from '../../ui/common/colors';
@@ -14,6 +15,8 @@ import {color29, primaryMain, white} from '../../ui/common/colors';
 import {deviceHeight} from '../../ui/common/responsive';
 import FileItem from '../../components/chat/FileItem';
 import ShareFileUserItem from '../../components/file/ShareFileUserItem';
+import MainActionButton from '../../components/MainActionButton';
+import g_styles from '../../ui/common/styles';
 
 const documentImg = require('./../../../assets/images/item4.png');
 const User1Img = require('../../../assets/images/users/buyer_agent.png');
@@ -64,14 +67,14 @@ const ShareFile = ({navigation}) => {
   const [selectedUsers, setSelectedUsers] = useState([]);
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={g_styles.container}>
       <TopTitle title={'Share'} prevPath={'ChatBox'} closePath="SignIn" />
       <View style={styles.searchView}>
         <Image source={documentImg} />
         <Text style={styles.searchText}>Search the file with</Text>
       </View>
       <ScrollView>
-        <View style={styles.box}>
+        <View style={g_styles.box}>
           {users.map((row, key) => {
             return (
               <ShareFileUserItem
@@ -84,24 +87,17 @@ const ShareFile = ({navigation}) => {
           })}
         </View>
       </ScrollView>
-      <View style={styles.submitView}>
-        <TouchableOpacity
-          style={styles.submitBtn}
-          onPress={() => navigation.navigate('ChatBox')}>
-          <Text style={styles.submitText}>Share File</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
+      <MainActionButton
+        text="Share File"
+        onPress={() => navigation.navigate('ChatBox')}
+      />
+    </SafeAreaView>
   );
 };
 
 export default ShareFile;
 
 const styles = StyleSheet.create({
-  container: {
-    height: deviceHeight,
-    backgroundColor: white,
-  },
   searchView: {
     backgroundColor: color29,
     flexDirection: 'row',
@@ -114,25 +110,5 @@ const styles = StyleSheet.create({
     lineHeight: 24,
     fontWeight: '500',
     paddingLeft: 10,
-  },
-  box: {
-    paddingRight: 20,
-    paddingLeft: 20,
-  },
-  submitView: {
-    padding: 20,
-    backgroundColor: 'transparent',
-  },
-  submitText: {
-    textAlign: 'center',
-    color: white,
-    fontWeight: '700',
-    fontSize: 18,
-  },
-  submitBtn: {
-    backgroundColor: primaryMain,
-    padding: 20,
-    borderRadius: 32,
-    marginBottom: 25,
   },
 });
