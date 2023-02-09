@@ -341,7 +341,7 @@ const App = () => {
     <MenuProvider>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName="ShareFile"
+          initialRouteName="CreateTask"
           screenOptions={{
             headerShown: false,
             presentation: 'modal',

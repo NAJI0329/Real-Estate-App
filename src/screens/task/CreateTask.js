@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import {
   View,
@@ -6,28 +6,61 @@ import {
   ScrollView,
   Text,
   TextInput,
-  TouchableOpacity,
+  FlatList,
+  SafeAreaView,
 } from 'react-native';
 import AssignUserItem from '../../components/Item/AssignUserItem';
+import MainActionButton from '../../components/MainActionButton';
 
 import TopTitle from '../../components/TopTitle';
-import {color20, primaryMain, white, transparent} from '../../ui/common/colors';
+import {color20, primaryMain} from '../../ui/common/colors';
 
-import {deviceHeight} from '../../ui/common/responsive';
+import g_styles from '../../ui/common/styles';
+
+const User1Img = require('../../../assets/images/users/buyer_agent.png');
+const User2Img = require('../../../assets/images/users/buyer.png');
+const User3Img = require('../../../assets/images/users/loan_officer.png');
+const User4Img = require('../../../assets/images/users/seller.png');
+const User5Img = require('../../../assets/images/users/seller_agent.png');
 
 const CreateTask = ({navigation}) => {
   const [name, setName] = React.useState('');
   const [description, setDescription] = React.useState('');
 
+  const [selectedUsers, setSelectedUsers] = useState(['1', '2']);
+  const [users] = useState([
+    {
+      id: '1',
+      avatar: User1Img,
+      role: 'Seller’s Agent',
+      name: 'Ari Setiawan',
+      email: 'rico@nutechadvisors.com',
+    },
+    {
+      id: '2',
+      avatar: User2Img,
+      role: 'Buyer',
+      name: 'Jessica Garza',
+      email: 'rico@nutechadvisors.com',
+    },
+    {
+      id: '3',
+      avatar: User3Img,
+      role: 'Seller',
+      name: 'Daniel Fernandez',
+      email: 'rico@nutechadvisors.com',
+    },
+  ]);
+
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={g_styles.container}>
       <TopTitle
         title={'Tasks'}
         prevPath={'TransactionRoom'}
         closePath="SignUp"
       />
       <ScrollView>
-        <View style={styles.box}>
+        <View style={g_styles.box}>
           <Text style={styles.title}>Create a Task</Text>
           <View>
             <Text style={styles.label}>Task's Name</Text>
@@ -49,35 +82,32 @@ const CreateTask = ({navigation}) => {
           </View>
           <View>
             <Text style={styles.label}>Assign task to: </Text>
-            <AssignUserItem isSelected={true} />
-            <AssignUserItem />
-            <AssignUserItem />
+
+            <FlatList
+              data={users}
+              style={g_styles.py_5}
+              renderItem={({item}) => (
+                <AssignUserItem
+                  row={item}
+                  selectedUsers={selectedUsers}
+                  setSelectedUsers={setSelectedUsers}
+                />
+              )}
+            />
           </View>
         </View>
       </ScrollView>
-      <View style={styles.submitView}>
-        <TouchableOpacity
-          style={styles.submitBtn}
-          onPress={() => navigation.navigate('setD')}>
-          <Text style={styles.submitText}>Set Date</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
+      <MainActionButton
+        text={'Set Date'}
+        onPress={() => navigation.navigate('setD')}
+      />
+    </SafeAreaView>
   );
 };
 
 export default CreateTask;
 
 const styles = StyleSheet.create({
-  container: {
-    height: deviceHeight,
-    backgroundColor: white,
-  },
-  box: {
-    paddingLeft: 20,
-    paddingRight: 20,
-    marginTop: 20,
-  },
   title: {
     color: primaryMain,
     fontSize: 18,
@@ -93,28 +123,12 @@ const styles = StyleSheet.create({
   },
   input: {
     padding: 10,
-    borderWidth: 2,
+    borderWidth: 1,
     borderRadius: 8,
     borderColor: color20,
     fontSize: 14,
     fontWeight: '400',
     lineHeight: 20,
     marginTop: 5,
-  },
-  submitView: {
-    padding: 20,
-    backgroundColor: 'transparent',
-  },
-  submitText: {
-    textAlign: 'center',
-    color: white,
-    fontWeight: '700',
-    fontSize: 18,
-  },
-  submitBtn: {
-    backgroundColor: primaryMain,
-    padding: 20,
-    borderRadius: 32,
-    marginBottom: 25,
   },
 });
