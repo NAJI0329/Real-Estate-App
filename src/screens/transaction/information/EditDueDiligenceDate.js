@@ -163,7 +163,13 @@ const EditDueDiligenceDate = ({navigation}) => {
             />
           </View>
           <View style={styles.calendarView}>
-            <Calendar markingType={'custom'} markedDates={markedDates} />
+            <Calendar
+              markingType={'custom'}
+              markedDates={markedDates}
+              theme={{
+                arrowColor: color33,
+              }}
+            />
           </View>
         </View>
       </ScrollView>
