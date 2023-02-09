@@ -73,7 +73,7 @@ const CreateTask = ({navigation}) => {
           <View>
             <Text style={styles.label}>Task Description</Text>
             <TextInput
-              style={styles.input}
+              style={[styles.input, {height: 100}]}
               onChangeText={setDescription}
               value={description}
               multiline={true}
