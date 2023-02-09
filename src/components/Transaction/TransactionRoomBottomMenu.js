@@ -11,10 +11,10 @@ const TransactionRoomBottomMenu = () => {
 
   return (
     <BottomMenuLayout>
-      <TouchableOpacity onPress={() => navigation.navigate('SessionChats')}>
+      <TouchableOpacity onPress={() => navigation.navigate('GeneralChat')}>
         <Image source={item1} />
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate('TaskList')}>
+      <TouchableOpacity onPress={() => navigation.navigate('GeneralTaskList')}>
         <Image source={item2} />
       </TouchableOpacity>
     </BottomMenuLayout>

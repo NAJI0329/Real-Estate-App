@@ -50,23 +50,21 @@ const GeneralTaskList = () => {
   ];
 
   return (
-    <SafeAreaView>
-      <View style={g_styles.container}>
-        <TopTitle
-          title={'General Task List'}
-          prevPath={'TransactionRoom'}
-          isClose={false}
-        />
-        <View style={g_styles.box}>
-          <SearchInput placeholder={'Search tasks by address'} />
-        </View>
-        <ScrollView style={[g_styles.box, g_styles.py_16]}>
-          {items.map((row, key) => {
-            return <GeneralTaskItem row={row} key={key} />;
-          })}
-        </ScrollView>
-        <TaskRoomBottomMenu />
+    <SafeAreaView style={g_styles.container}>
+      <TopTitle
+        title={'General Task List'}
+        prevPath={'TransactionRoom'}
+        isClose={false}
+      />
+      <View style={g_styles.box}>
+        <SearchInput placeholder={'Search tasks by address'} />
       </View>
+      <ScrollView style={[g_styles.box, g_styles.py_16]}>
+        {items.map((row, key) => {
+          return <GeneralTaskItem row={row} key={key} />;
+        })}
+      </ScrollView>
+      <TaskRoomBottomMenu />
     </SafeAreaView>
   );
 };

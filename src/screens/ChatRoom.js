@@ -1,6 +1,13 @@
 import React, {useState} from 'react';
 
-import {View, Text, StyleSheet, ScrollView, Image} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  Image,
+  SafeAreaView,
+} from 'react-native';
 import {color13, color34, color48} from '../ui/common/colors';
 
 import UnlockifyNav from '../components/UnlocakifyNav';
@@ -20,7 +27,7 @@ const ChatRoom = () => {
   const [selectTab, setSelectedTab] = useState(tabs[0]);
 
   return (
-    <View style={g_styles.container}>
+    <SafeAreaView style={g_styles.container}>
       <UnlockifyNav title="Simple Deeds" />
       <ScrollView>
         <View style={g_styles.box}>
@@ -74,7 +81,7 @@ const ChatRoom = () => {
       </ScrollView>
       {selectTab === tabs[0] && <BottomAddBtn clickPath={'AddContact'} />}
       <TaskRoomBottomMenu />
-    </View>
+    </SafeAreaView>
   );
 };
 

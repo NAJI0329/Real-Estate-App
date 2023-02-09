@@ -57,25 +57,23 @@ const GeneralChat = () => {
   ];
 
   return (
-    <SafeAreaView>
-      <View style={g_styles.container}>
-        <TopTitle
-          title={'General Chat'}
-          prevPath={'TransactionRoom'}
-          isClose={false}
-        />
-        <View style={g_styles.box}>
-          <SearchInput placeholder={'Search chats by address'} />
-        </View>
-        <ScrollView style={g_styles.box}>
-          <FlatList
-            style={g_styles.py_10}
-            data={items}
-            renderItem={({item}) => <GeneralChatItem row={item} />}
-          />
-        </ScrollView>
-        <TaskRoomBottomMenu />
+    <SafeAreaView style={g_styles.container}>
+      <TopTitle
+        title={'General Chat'}
+        prevPath={'TransactionRoom'}
+        isClose={false}
+      />
+      <View style={g_styles.box}>
+        <SearchInput placeholder={'Search chats by address'} />
       </View>
+      <ScrollView style={g_styles.box}>
+        <FlatList
+          style={g_styles.py_10}
+          data={items}
+          renderItem={({item}) => <GeneralChatItem row={item} />}
+        />
+      </ScrollView>
+      <TaskRoomBottomMenu />
     </SafeAreaView>
   );
 };
