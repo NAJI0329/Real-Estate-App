@@ -1,9 +1,15 @@
 import React, {useState} from 'react';
 
-import {View, Text, StyleSheet, ScrollView, Image} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  Image,
+  SafeAreaView,
+} from 'react-native';
 import {color48} from '../ui/common/colors';
 
-import TaskRoomBottomMenu from '../components/TaskRoomBottomMenu';
 import g_styles from '../ui/common/styles';
 import TransactionItem from '../components/chatroom/TransactionItem';
 import TopTitle from '../components/TopTitle';
@@ -19,7 +25,7 @@ const TaskRoom = () => {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
-    <View style={g_styles.container}>
+    <SafeAreaView style={g_styles.container}>
       <TopTitle title={'tasks'} closePath="SignIn" prevPath={'ChatRoom'} />
       <ScrollView>
         <View style={g_styles.box}>
@@ -52,7 +58,7 @@ const TaskRoom = () => {
         setModalVisible={setModalVisible}>
         <FileSelectModal />
       </BottomSheet>
-    </View>
+    </SafeAreaView>
   );
 };
 
