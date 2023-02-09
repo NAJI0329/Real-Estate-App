@@ -26,7 +26,7 @@ const TaskRoom = () => {
 
   return (
     <SafeAreaView style={g_styles.container}>
-      <TopTitle title={'tasks'} closePath="SignIn" prevPath={'ChatRoom'} />
+      <TopTitle title={'Task'} closePath="SignIn" prevPath={'ChatRoom'} />
       <ScrollView>
         <View style={g_styles.box}>
           {/* Transaction */}
