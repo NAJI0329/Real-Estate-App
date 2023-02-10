@@ -7,6 +7,7 @@ import {
   ScrollView,
   TextInput,
   TouchableOpacity,
+  SafeAreaView,
 } from 'react-native';
 import {
   black1,
@@ -15,10 +16,11 @@ import {
   primaryMain,
   white,
 } from '../../ui/common/colors';
-import {deviceHeight} from '../../ui/common/responsive';
 import TopTitle from '../../components/TopTitle';
 import useFileSelector from '../../hooks/useFileSelector';
 import Dropdown from '../../components/common/Dropdown';
+import g_styles from '../../ui/common/styles';
+import MainActionButton from '../../components/MainActionButton';
 
 const Avatar = require('./../../../assets/images/large-avatar.png');
 
@@ -63,14 +65,14 @@ const EditProfile = ({navigation}) => {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={g_styles.container}>
       <TopTitle
         title="Edit Profile"
         prevPath={'ContactList'}
-        closePath="SignUp"
+        closePath="SignIn"
       />
-      <ScrollView style={styles.scrollView}>
-        <View style={styles.box}>
+      <ScrollView>
+        <View style={g_styles.box}>
           <View style={styles.avatarView}>
             <View>
               <Image
@@ -85,62 +87,62 @@ const EditProfile = ({navigation}) => {
             </View>
           </View>
 
-          <View style={{flexDirection: 'row'}}>
-            <View style={{width: '50%', paddingLeft: 10, paddingRight: 10}}>
+          <View style={g_styles.flex}>
+            <View style={[g_styles.w_p50, g_styles.pr_10]}>
               <Text style={styles.label}>First Name</Text>
               <TextInput
-                style={styles.selectBox}
+                style={styles.TextInput}
                 onChangeText={setFullname}
                 value={fullname}
               />
             </View>
-            <View style={{width: '50%', paddingLeft: 10, paddingRight: 10}}>
+            <View style={[g_styles.w_p50, g_styles.pl_10]}>
               <Text style={styles.label}>Last Name</Text>
               <TextInput
-                style={styles.selectBox}
+                style={styles.TextInput}
                 onChangeText={setLastname}
                 value={lastname}
               />
             </View>
           </View>
-          <View style={{width: '100%', paddingLeft: 10, paddingRight: 10}}>
+          <View style={[g_styles.w_p100]}>
             <Text style={styles.label}>Email</Text>
             <TextInput
-              style={styles.selectBox}
+              style={styles.TextInput}
               onChangeText={setEmail}
               value={email}
             />
           </View>
-          <View style={{width: '50%', paddingLeft: 10, paddingRight: 10}}>
+          <View style={[g_styles.w_p50, g_styles.pr_10]}>
             <Text style={styles.label}>Phone</Text>
             <TextInput
-              style={styles.selectBox}
+              style={styles.TextInput}
               onChangeText={setPhone}
               value={phone}
             />
           </View>
-          <View style={{width: '100%', paddingLeft: 10, paddingRight: 10}}>
+          <View style={[g_styles.w_p100]}>
             <Text style={styles.label}>
               Addres Line #1 (Street Address, P.O Box)
             </Text>
             <TextInput
-              style={styles.selectBox}
+              style={styles.TextInput}
               onChangeText={setAddress}
               value={address}
             />
           </View>
-          <View style={{width: '100%', paddingLeft: 10, paddingRight: 10}}>
+          <View style={[g_styles.w_p100]}>
             <Text style={styles.label}>
               Addres Line #2 (Apartment, sute, unit, building, floor, etc.)
             </Text>
             <TextInput
-              style={styles.selectBox}
+              style={styles.TextInput}
               onChangeText={setAddress2}
               value={address2}
             />
           </View>
-          <View style={{flexDirection: 'row'}}>
-            <View style={{width: '50%', paddingLeft: 10, paddingRight: 10}}>
+          <View style={g_styles.flex}>
+            <View style={[g_styles.w_p30, g_styles.pr_10]}>
               <Text style={styles.label}>City</Text>
               <Dropdown
                 open={citiesOpen}
@@ -152,7 +154,7 @@ const EditProfile = ({navigation}) => {
                 dropDownDirection="TOP"
               />
             </View>
-            <View style={{width: '50%', paddingLeft: 10, paddingRight: 10}}>
+            <View style={[g_styles.w_p50, g_styles.pl_10]}>
               <Text style={styles.label}>State</Text>
               <Dropdown
                 open={statesOpen}
@@ -165,16 +167,16 @@ const EditProfile = ({navigation}) => {
               />
             </View>
           </View>
-          <View style={{flexDirection: 'row'}}>
-            <View style={{width: '30%', paddingLeft: 10, paddingRight: 10}}>
+          <View style={g_styles.flex}>
+            <View style={[g_styles.w_p30, g_styles.pr_10]}>
               <Text style={styles.label}>Zip/Code</Text>
               <TextInput
-                style={styles.selectBox}
+                style={styles.TextInput}
                 onChangeText={setZipCode}
                 value={zipCode}
               />
             </View>
-            <View style={{width: '70%', paddingLeft: 10, paddingRight: 10}}>
+            <View style={[g_styles.w_p70, g_styles.pl_10]}>
               <Text style={styles.label}>Country</Text>
               <Dropdown
                 open={countriesOpen}
@@ -187,37 +189,21 @@ const EditProfile = ({navigation}) => {
               />
             </View>
           </View>
-          <View style={styles.submitView}>
-            <TouchableOpacity
-              style={styles.submitBtn}
-              onPress={() => {
-                navigation.navigate('ContactList');
-              }}>
-              <Text style={styles.submitText}>Change Info</Text>
-            </TouchableOpacity>
-          </View>
         </View>
       </ScrollView>
-    </View>
+      <MainActionButton
+        text={'Change Info'}
+        onPress={() => {
+          navigation.navigate('ContactList');
+        }}
+      />
+    </SafeAreaView>
   );
 };
 
 export default EditProfile;
 
 const styles = StyleSheet.create({
-  container: {
-    minHeight: deviceHeight,
-  },
-  scrollView: {
-    minHeight: deviceHeight,
-    backgroundColor: white,
-    paddingBottom: 100,
-  },
-  box: {
-    paddingLeft: 15,
-    paddingRight: 15,
-    paddingBottom: 60,
-  },
   avatarView: {
     alignItems: 'center',
     marginTop: 10,
@@ -251,15 +237,16 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     lineHeight: 20,
     marginTop: 15,
-    // marginLeft: 20,
+    marginLeft: 20,
   },
-  selectBox: {
+  TextInput: {
     borderRadius: 100,
     borderColor: color20,
     borderWidth: 1,
     paddingLeft: 20,
     marginTop: 5,
     backgroundColor: white,
+    height: 50,
   },
   submitText: {
     textAlign: 'center',
