@@ -1,6 +1,12 @@
 import React, {useState} from 'react';
 
-import {View, StyleSheet, ScrollView, TouchableOpacity} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  ScrollView,
+  TouchableOpacity,
+  SafeAreaView,
+} from 'react-native';
 import TopTitle from '../../components/TopTitle';
 import {white} from '../../ui/common/colors';
 
@@ -8,6 +14,7 @@ import {deviceHeight} from '../../ui/common/responsive';
 import SettingLinkItem from '../../components/settings/SettingLinkItem';
 import BottomSheet from '../../components/BottomSheet';
 import LogOutConfirm from './LogOutConfirm';
+import g_styles from '../../ui/common/styles';
 
 const profile = require('./../../../assets/images/settings/profile.png');
 const notification = require('./../../../assets/images/settings/notification.png');
@@ -25,17 +32,14 @@ const Settings = ({navigation}) => {
   };
 
   return (
-    <View style={styles.container}>
-      <ScrollView
-        style={{
-          backgroundColor: white,
-        }}>
-        <TopTitle
-          title={'Settings'}
-          prevPath={'TransactionRoom'}
-          closePath="SignUp"
-        />
-        <View style={styles.box}>
+    <SafeAreaView style={g_styles.container}>
+      <TopTitle
+        title={'Settings'}
+        prevPath={'TransactionRoom'}
+        closePath="SignIn"
+      />
+      <ScrollView>
+        <View style={g_styles.box}>
           <TouchableOpacity onPress={() => navigation.navigate('EditProfile')}>
             <SettingLinkItem icon={profile} title="Edit Profile" />
           </TouchableOpacity>
@@ -76,19 +80,10 @@ const Settings = ({navigation}) => {
           }}
         />
       </BottomSheet>
-    </View>
+    </SafeAreaView>
   );
 };
 
 export default Settings;
 
-const styles = StyleSheet.create({
-  container: {
-    height: deviceHeight,
-  },
-  box: {
-    paddingLeft: 20,
-    paddingRight: 20,
-    marginTop: 20,
-  },
-});
+const styles = StyleSheet.create({});

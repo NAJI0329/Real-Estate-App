@@ -7,7 +7,7 @@ const g_styles = StyleSheet.create({
     backgroundColor: white,
   },
   box: {
-    paddingHorizontal: Platform.OS === 'ios' ? 15 : 24,
+    paddingHorizontal: Platform.OS === 'ios' ? 15 : 20,
   },
   flex: {flexDirection: 'row'},
   itemsCenter: {alignItems: 'center'},
