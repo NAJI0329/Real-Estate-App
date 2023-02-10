@@ -1,18 +1,16 @@
 import React from 'react';
 
-import {View, StyleSheet, ScrollView} from 'react-native';
+import {View, StyleSheet, ScrollView, SafeAreaView} from 'react-native';
 import TopTitle from '../../components/TopTitle';
-import {white} from '../../ui/common/colors';
-
-import {deviceHeight} from '../../ui/common/responsive';
 import HelpItem from '../../components/settings/HelpItem';
+import g_styles from '../../ui/common/styles';
 
 const Help = () => {
   return (
-    <View style={styles.container}>
-      <TopTitle title={'Help'} prevPath={'Settings'} closePath="SignUp" />
+    <SafeAreaView style={g_styles.container}>
+      <TopTitle title={'Help'} prevPath={'Settings'} closePath="SignIn" />
       <ScrollView>
-        <View style={styles.box}>
+        <View style={g_styles.box}>
           <HelpItem title="FAQ" link={'FAQ'} />
           <HelpItem title="Contact us" link={'ContactUs'} />
           <HelpItem title="Terms & Conditions" link={'TermsConditions'} />
@@ -20,19 +18,10 @@ const Help = () => {
           <HelpItem title="About Us" link={'AboutUs'} />
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };
 
 export default Help;
 
-const styles = StyleSheet.create({
-  container: {
-    height: deviceHeight,
-    backgroundColor: white,
-  },
-  box: {
-    paddingLeft: 20,
-    paddingRight: 20,
-  },
-});
+const styles = StyleSheet.create({});
