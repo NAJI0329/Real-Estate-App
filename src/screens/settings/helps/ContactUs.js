@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-
 import {
   View,
   StyleSheet,
@@ -7,50 +6,50 @@ import {
   ScrollView,
   TextInput,
   TouchableOpacity,
+  SafeAreaView,
 } from 'react-native';
-// import {useNavigation} from '@react-navigation/native';
 import TopTitle from '../../../components/TopTitle';
-import {color20, gray1, white} from '../../../ui/common/colors';
+import {color20, softGray, white} from '../../../ui/common/colors';
 import g_styles from '../../../ui/common/styles';
 
 const ContactUs = () => {
-  // const navigation = useNavigation();
   const [fullname, setFullname] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
   return (
-    <View style={g_styles.container}>
-      <TopTitle title={'Contact Us'} prevPath={'Help'} closePath="SignUp" />
+    <SafeAreaView style={g_styles.container}>
+      <TopTitle title={'Contact Us'} closePath="SignIn" />
       <ScrollView>
         <View style={g_styles.box}>
           <View>
             <Text style={styles.label}>Full Name</Text>
             <TextInput
-              style={styles.textinput}
+              style={[styles.textinput, g_styles.mt_8]}
               onChangeText={setFullname}
               placeholder="Full Name"
               value={fullname}
             />
           </View>
-          <View>
+          <View style={g_styles.mt_16}>
             <Text style={styles.label}>Email</Text>
             <TextInput
-              style={styles.textinput}
+              style={[styles.textinput, g_styles.mt_8]}
               onChangeText={setEmail}
               placeholder="Email"
               value={email}
             />
           </View>
-          <View>
+          <View style={g_styles.mt_16}>
             <Text style={styles.label}>Message</Text>
             <TextInput
-              style={styles.textarea}
+              style={[styles.textarea, g_styles.mt_8]}
               onChangeText={setMessage}
               placeholder="Message"
               value={message}
               multiline={true}
               numberOfLines={6}
+              textAlignVertical={'top'}
             />
           </View>
         </View>
@@ -61,7 +60,7 @@ const ContactUs = () => {
           <Text style={g_styles.submitText}>Send Message</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -69,29 +68,29 @@ export default ContactUs;
 
 const styles = StyleSheet.create({
   label: {
-    color: gray1,
+    color: softGray,
     fontSize: 16,
     fontWeight: '500',
     lineHeight: 20,
-    marginTop: 16,
     paddingLeft: 20,
+    fontFamily: 'SF Pro Display',
   },
   textinput: {
     borderRadius: 100,
     borderColor: color20,
     borderWidth: 1,
-    paddingLeft: 20,
-    marginTop: 5,
+    paddingHorizontal: 20,
     backgroundColor: white,
     fontSize: 16,
+    height: 50,
   },
   textarea: {
-    borderRadius: 20,
+    borderRadius: 16,
     borderColor: color20,
     borderWidth: 1,
-    paddingLeft: 20,
-    marginTop: 5,
+    padding: 16,
     backgroundColor: white,
     fontSize: 16,
+    height: 150,
   },
 });

@@ -1,14 +1,9 @@
-import {Platform, StyleSheet} from 'react-native';
+import {StyleSheet} from 'react-native';
 import {white} from './colors';
 
 const g_styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: white,
-  },
-  box: {
-    paddingHorizontal: 16,
-  },
+  container: {flex: 1, backgroundColor: white},
+  box: {paddingHorizontal: 16},
   flex: {flexDirection: 'row'},
   itemsCenter: {alignItems: 'center'},
   itemsStart: {alignItems: 'flex-start'},
@@ -30,6 +25,10 @@ const g_styles = StyleSheet.create({
   pl_5: {paddingLeft: 5},
   pl_10: {paddingLeft: 10},
   mt_5: {marginTop: 5},
+  mt_6: {marginTop: 6},
+  mt_7: {marginTop: 7},
+  mt_8: {marginTop: 8},
+  mt_9: {marginTop: 9},
   mt_10: {marginTop: 10},
   mt_16: {marginTop: 16},
   mt_20: {marginTop: 20},

@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-
 import {
   View,
   StyleSheet,
@@ -10,7 +9,6 @@ import {
 } from 'react-native';
 import TopTitle from '../../../components/TopTitle';
 import {primaryMain, white} from '../../../ui/common/colors';
-import {deviceHeight} from '../../../ui/common/responsive';
 import FaqItem from '../../../components/settings/FaqItem';
 import g_styles from '../../../ui/common/styles';
 
@@ -57,7 +55,7 @@ const FAQ = () => {
     <SafeAreaView style={g_styles.container}>
       <TopTitle title={'FAQ'} closePath="SignIn" />
       <ScrollView>
-        <View style={styles.box}>
+        <View style={g_styles.box}>
           <ScrollView horizontal={true} style={g_styles.pb_10}>
             {types.map((row, key) => {
               return (
@@ -101,14 +99,6 @@ const FAQ = () => {
 export default FAQ;
 
 const styles = StyleSheet.create({
-  container: {
-    height: deviceHeight,
-    backgroundColor: white,
-  },
-  box: {
-    paddingLeft: 20,
-    paddingRight: 20,
-  },
   typeItem: {
     paddingLeft: 20,
     paddingRight: 20,
