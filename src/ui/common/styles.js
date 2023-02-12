@@ -25,6 +25,8 @@ const g_styles = StyleSheet.create({
   pr_5: {paddingRight: 5},
   pr_10: {paddingRight: 10},
   pr_16: {paddingRight: 16},
+  pb_5: {paddingBottom: 5},
+  pb_10: {paddingBottom: 10},
   pl_5: {paddingLeft: 5},
   pl_10: {paddingLeft: 10},
   mt_5: {marginTop: 5},

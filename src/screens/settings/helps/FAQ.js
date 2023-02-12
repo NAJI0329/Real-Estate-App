@@ -58,7 +58,7 @@ const FAQ = () => {
       <TopTitle title={'FAQ'} closePath="SignIn" />
       <ScrollView>
         <View style={styles.box}>
-          <ScrollView horizontal={true}>
+          <ScrollView horizontal={true} style={g_styles.pb_10}>
             {types.map((row, key) => {
               return (
                 <TouchableOpacity
@@ -76,7 +76,7 @@ const FAQ = () => {
               );
             })}
           </ScrollView>
-          <View style={g_styles.mt_20}>
+          <View style={g_styles.mt_10}>
             {faqs.map((row, key) => {
               if (row.slug !== type) {
                 return false;
