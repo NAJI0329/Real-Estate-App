@@ -1,18 +1,14 @@
 import React from 'react';
 
-import {View, StyleSheet, Text, ScrollView} from 'react-native';
+import {View, StyleSheet, Text, ScrollView, SafeAreaView} from 'react-native';
 import TopTitle from '../../../components/TopTitle';
 import {color43, softBlack} from '../../../ui/common/colors';
 import g_styles from '../../../ui/common/styles';
 
 const TermsConditions = () => {
   return (
-    <View style={g_styles.container}>
-      <TopTitle
-        title={'Terms and Conditions'}
-        prevPath={'Help'}
-        closePath="SignUp"
-      />
+    <SafeAreaView style={g_styles.container}>
+      <TopTitle title={'Terms and Conditions'} closePath="SignIn" />
       <ScrollView>
         <View style={g_styles.box}>
           <Text style={styles.title}>Introduction</Text>
@@ -44,7 +40,7 @@ const TermsConditions = () => {
           </Text>
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };
 
