@@ -9,7 +9,13 @@ import {
 } from 'react-native';
 import MainActionButton from '../../../components/MainActionButton';
 import TopTitle from '../../../components/TopTitle';
-import {color20, softGray, white} from '../../../ui/common/colors';
+import {
+  color20,
+  color53,
+  softBlack,
+  softGray,
+  white,
+} from '../../../ui/common/colors';
 import g_styles from '../../../ui/common/styles';
 
 const ContactUs = () => {
@@ -41,7 +47,9 @@ const ContactUs = () => {
       <ScrollView>
         <View style={g_styles.box}>
           <View>
-            <Text style={styles.label}>Full Name</Text>
+            <Text style={styles.label}>
+              Full Name<Text style={styles.requireIcon}>*</Text>
+            </Text>
             <TextInput
               style={[styles.textinput, g_styles.mt_8]}
               placeholder="Full Name"
@@ -50,7 +58,9 @@ const ContactUs = () => {
             />
           </View>
           <View style={g_styles.mt_16}>
-            <Text style={styles.label}>Email</Text>
+            <Text style={styles.label}>
+              Email<Text style={styles.requireIcon}>*</Text>
+            </Text>
             <TextInput
               style={[styles.textinput, g_styles.mt_8]}
               placeholder="Email"
@@ -59,7 +69,17 @@ const ContactUs = () => {
             />
           </View>
           <View style={g_styles.mt_16}>
-            <Text style={styles.label}>Message</Text>
+            <View
+              style={[
+                g_styles.flex,
+                g_styles.justifyBetween,
+                g_styles.itemsCenter,
+              ]}>
+              <Text style={styles.label}>
+                Message<Text style={styles.requireIcon}>*</Text>
+              </Text>
+              <Text style={styles.maxText}>Max 250 words</Text>
+            </View>
             <TextInput
               style={[styles.textarea, g_styles.mt_8]}
               placeholder="Message"
@@ -110,5 +130,16 @@ const styles = StyleSheet.create({
     backgroundColor: white,
     fontSize: 16,
     height: 150,
+  },
+  requireIcon: {
+    color: color53,
+  },
+  maxText: {
+    color: softBlack,
+    fontSize: 14,
+    lineHeight: 18,
+    fontWeight: '400',
+    fontFamily: 'SF Pro Display',
+    marginRight: 20,
   },
 });

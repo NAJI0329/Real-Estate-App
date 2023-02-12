@@ -54,6 +54,7 @@ export const color49 = '#E1E5EA';
 export const color50 = '#F6F7F9';
 export const color51 = '#E1E6EA';
 export const color52 = '#C1C1D7';
+export const color53 = '#DA1414';
 
 export const secondaryAccent = '#FEB692';
 
