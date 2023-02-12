@@ -1,14 +1,13 @@
 import React from 'react';
-
-import {View, StyleSheet, Text, ScrollView} from 'react-native';
+import {View, StyleSheet, Text, ScrollView, SafeAreaView} from 'react-native';
 import TopTitle from '../../../components/TopTitle';
 import {color43, softBlack} from '../../../ui/common/colors';
 import g_styles from '../../../ui/common/styles';
 
 const PrivayPolicy = () => {
   return (
-    <View style={g_styles.container}>
-      <TopTitle title={'Privacy Policy'} prevPath={'Help'} closePath="SignUp" />
+    <SafeAreaView style={g_styles.container}>
+      <TopTitle title={'Privacy Policy'} />
       <ScrollView>
         <View style={g_styles.box}>
           <Text style={styles.title}>Types of Data We Collect</Text>
@@ -48,7 +47,7 @@ const PrivayPolicy = () => {
           </Text>
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };
 
