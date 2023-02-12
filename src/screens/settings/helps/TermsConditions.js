@@ -8,7 +8,7 @@ import g_styles from '../../../ui/common/styles';
 const TermsConditions = () => {
   return (
     <SafeAreaView style={g_styles.container}>
-      <TopTitle title={'Terms and Conditions'} closePath="SignIn" />
+      <TopTitle title={'Terms and Conditions'} />
       <ScrollView>
         <View style={g_styles.box}>
           <Text style={styles.title}>Introduction</Text>
