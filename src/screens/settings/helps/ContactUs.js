@@ -1,21 +1,39 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   View,
   StyleSheet,
   Text,
   ScrollView,
   TextInput,
-  TouchableOpacity,
   SafeAreaView,
 } from 'react-native';
+import MainActionButton from '../../../components/MainActionButton';
 import TopTitle from '../../../components/TopTitle';
 import {color20, softGray, white} from '../../../ui/common/colors';
 import g_styles from '../../../ui/common/styles';
 
 const ContactUs = () => {
+  const [isDisable, setDisable] = useState(true);
+
   const [fullname, setFullname] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+
+  const onSend = async () => {
+    const req = {
+      fullname,
+      email,
+      message,
+    };
+  };
+
+  useEffect(() => {
+    if (fullname && email && message) {
+      setDisable(false);
+    } else {
+      setDisable(true);
+    }
+  }, [fullname, email, message]);
 
   return (
     <SafeAreaView style={g_styles.container}>
@@ -26,40 +44,40 @@ const ContactUs = () => {
             <Text style={styles.label}>Full Name</Text>
             <TextInput
               style={[styles.textinput, g_styles.mt_8]}
-              onChangeText={setFullname}
               placeholder="Full Name"
               value={fullname}
+              onChangeText={setFullname}
             />
           </View>
           <View style={g_styles.mt_16}>
             <Text style={styles.label}>Email</Text>
             <TextInput
               style={[styles.textinput, g_styles.mt_8]}
-              onChangeText={setEmail}
               placeholder="Email"
               value={email}
+              onChangeText={setEmail}
             />
           </View>
           <View style={g_styles.mt_16}>
             <Text style={styles.label}>Message</Text>
             <TextInput
               style={[styles.textarea, g_styles.mt_8]}
-              onChangeText={setMessage}
               placeholder="Message"
-              value={message}
               multiline={true}
               numberOfLines={6}
               textAlignVertical={'top'}
+              value={message}
+              onChangeText={setMessage}
             />
           </View>
         </View>
       </ScrollView>
 
-      <View style={g_styles.submitView}>
-        <TouchableOpacity style={g_styles.submitBtn}>
-          <Text style={g_styles.submitText}>Send Message</Text>
-        </TouchableOpacity>
-      </View>
+      <MainActionButton
+        text="Send Message"
+        onPress={onSend}
+        isDisable={isDisable}
+      />
     </SafeAreaView>
   );
 };
