@@ -6,6 +6,7 @@ import {
   Text,
   ScrollView,
   TouchableOpacity,
+  SafeAreaView,
 } from 'react-native';
 import TopTitle from '../../../components/TopTitle';
 import {primaryMain, white} from '../../../ui/common/colors';
@@ -53,8 +54,8 @@ const FAQ = () => {
   ];
 
   return (
-    <View style={styles.container}>
-      <TopTitle title={'FAQ'} prevPath={'Help'} closePath="SignUp" />
+    <SafeAreaView style={g_styles.container}>
+      <TopTitle title={'FAQ'} closePath="SignIn" />
       <ScrollView>
         <View style={styles.box}>
           <ScrollView horizontal={true}>
@@ -93,7 +94,7 @@ const FAQ = () => {
           </View>
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };
 

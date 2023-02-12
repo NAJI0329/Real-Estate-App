@@ -11,7 +11,10 @@ const TopTitle = ({title, prevPath, closePath, isClose = true}) => {
 
   return (
     <View style={styles.view}>
-      <TouchableOpacity onPress={() => navigation.navigate(prevPath)}>
+      <TouchableOpacity
+        onPress={() =>
+          prevPath ? navigation.navigate(prevPath) : navigation.goBack()
+        }>
         <Image source={leftArrow} style={styles.leftArrow} />
       </TouchableOpacity>
       <Text style={styles.title}>{title}</Text>
