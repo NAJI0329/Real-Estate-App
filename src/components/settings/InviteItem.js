@@ -1,12 +1,13 @@
 import React from 'react';
-import {Text, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import {
-  primaryMain,
-  softBlack,
-  white,
-  color33,
-  color32,
-} from '../../ui/common/colors';
+  Text,
+  View,
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+  Platform,
+} from 'react-native';
+import {primaryMain, white, color33, color32} from '../../ui/common/colors';
 
 const InviteItem = ({row, invitedList, setInvitedList}) => {
   return (
@@ -56,8 +57,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingVertical: 20,
-    paddingHorizontal: 20,
+    padding: Platform.OS === 'ios' ? 16 : 20,
     elevation: 1,
     marginVertical: 10,
     borderRadius: 10,
