@@ -21,9 +21,8 @@ const AboutUs = () => {
       <ScrollView>
         <View style={g_styles.box}>
           <View style={[g_styles.itemsCenter, g_styles.mt_20]}>
-            <Image source={LOGO_IMG} style={g_styles.h_50px} />
+            <Image source={LOGO_IMG} style={{height: 30}} />
           </View>
-          <Text style={styles.logoText}>Simple Deeds</Text>
           <Text style={styles.title}>We love real estate</Text>
           <Text style={styles.comment}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
