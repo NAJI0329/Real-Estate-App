@@ -7,11 +7,16 @@ import {
   TouchableOpacity,
   Platform,
 } from 'react-native';
+import {Shadow} from 'react-native-shadow-2';
 import {primaryMain, white, color33, color32} from '../../ui/common/colors';
 
 const InviteItem = ({row, invitedList, setInvitedList}) => {
   return (
-    <View style={styles.itemView}>
+    <Shadow
+      distance={3}
+      offset={[0, 3]}
+      startColor={'#00000010'}
+      style={styles.itemView}>
       <View style={styles.leftView}>
         <Image source={row?.avatar} style={styles.avatar} />
         <View>
@@ -46,7 +51,7 @@ const InviteItem = ({row, invitedList, setInvitedList}) => {
           {invitedList.includes(row?.id) ? 'Invited' : 'Invite'}
         </Text>
       </TouchableOpacity>
-    </View>
+    </Shadow>
   );
 };
 
@@ -58,10 +63,10 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: Platform.OS === 'ios' ? 16 : 20,
-    elevation: 1,
     marginVertical: 10,
     borderRadius: 10,
     backgroundColor: white,
+    width: '100%',
   },
   leftView: {
     flexDirection: 'row',
