@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-import {View, StyleSheet, Text, ScrollView} from 'react-native';
+import {View, StyleSheet, Text, ScrollView, SafeAreaView} from 'react-native';
 import Logo from '../../../components/Logo';
 import TopTitle from '../../../components/TopTitle';
 import {color43, primaryMain, softBlack} from '../../../ui/common/colors';
@@ -8,8 +8,8 @@ import g_styles from '../../../ui/common/styles';
 
 const AboutUs = () => {
   return (
-    <View style={g_styles.container}>
-      <TopTitle title={'About Us'} prevPath={'Help'} closePath="SignUp" />
+    <SafeAreaView style={g_styles.container}>
+      <TopTitle title={'About Us'} closePath="SignIn" />
       <ScrollView>
         <View style={g_styles.box}>
           <View style={[g_styles.itemsCenter, g_styles.mt_20]}>
@@ -39,7 +39,7 @@ const AboutUs = () => {
           </Text>
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };
 
