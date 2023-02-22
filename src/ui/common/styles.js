@@ -50,6 +50,7 @@ const g_styles = StyleSheet.create({
   mr_20: {marginRight: 20},
   h_half: {height: '50%'},
   h_full: {height: '100%'},
+  h_50px: {height: 50},
   w_p30: {width: '30%'},
   w_p50: {width: '50%'},
   w_p70: {width: '70%'},

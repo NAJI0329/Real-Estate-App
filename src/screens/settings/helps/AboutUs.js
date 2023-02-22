@@ -1,10 +1,18 @@
-import React, {useState} from 'react';
+import React from 'react';
 
-import {View, StyleSheet, Text, ScrollView, SafeAreaView} from 'react-native';
-import Logo from '../../../components/Logo';
+import {
+  View,
+  StyleSheet,
+  Text,
+  ScrollView,
+  SafeAreaView,
+  Image,
+} from 'react-native';
 import TopTitle from '../../../components/TopTitle';
 import {color43, primaryMain, softBlack} from '../../../ui/common/colors';
 import g_styles from '../../../ui/common/styles';
+
+const LOGO_IMG = require('./../../../../assets/images/Horizontal-Logo-Negative.png');
 
 const AboutUs = () => {
   return (
@@ -13,7 +21,7 @@ const AboutUs = () => {
       <ScrollView>
         <View style={g_styles.box}>
           <View style={[g_styles.itemsCenter, g_styles.mt_20]}>
-            <Logo h={100} />
+            <Image source={LOGO_IMG} style={g_styles.h_50px} />
           </View>
           <Text style={styles.logoText}>Simple Deeds</Text>
           <Text style={styles.title}>We love real estate</Text>
