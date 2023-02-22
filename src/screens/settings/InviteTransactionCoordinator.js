@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-import {View, StyleSheet, ScrollView} from 'react-native';
+import {View, StyleSheet, ScrollView, SafeAreaView} from 'react-native';
 import TopTitle from '../../components/TopTitle';
 import {white} from '../../ui/common/colors';
 
@@ -46,8 +46,8 @@ const InviteTransactionCoordinator = () => {
   const [invitedList, setInvitedList] = useState([]);
 
   return (
-    <View style={g_styles.container}>
-      <TopTitle title={'Invite'} prevPath={'Settings'} closePath="SignIn" />
+    <SafeAreaView style={g_styles.container}>
+      <TopTitle title={'Invite'} closePath="SignIn" />
       <ScrollView>
         <View style={g_styles.box}>
           {invites.map((row, key) => {
@@ -63,7 +63,7 @@ const InviteTransactionCoordinator = () => {
         </View>
       </ScrollView>
       <BottomAddBtn clickPath={'AddCoordinator'} />
-    </View>
+    </SafeAreaView>
   );
 };
 
