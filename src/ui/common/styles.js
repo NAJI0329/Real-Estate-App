@@ -17,6 +17,7 @@ const g_styles = StyleSheet.create({
   py_24: {paddingVertical: 24},
   py_10: {paddingVertical: 10},
   py_16: {paddingVertical: 16},
+  py_20: {paddingVertical: 20},
   pr_5: {paddingRight: 5},
   pr_10: {paddingRight: 10},
   pr_16: {paddingRight: 16},

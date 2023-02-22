@@ -20,9 +20,12 @@ const AboutUs = () => {
       <TopTitle title={'About Us'} closePath="SignIn" />
       <ScrollView>
         <View style={g_styles.box}>
-          <View style={[g_styles.itemsCenter, g_styles.mt_20]}>
-            <Image source={LOGO_IMG} style={{height: 30}} />
+          <View style={[g_styles.flex, g_styles.justifyCenter, g_styles.py_20]}>
+            <View style={[g_styles.w_p70]}>
+              <Image source={LOGO_IMG} style={{height: 40, width: 'auto'}} />
+            </View>
           </View>
+
           <Text style={styles.title}>We love real estate</Text>
           <Text style={styles.comment}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
