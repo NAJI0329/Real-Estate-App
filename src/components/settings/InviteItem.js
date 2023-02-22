@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: Platform.OS === 'ios' ? 16 : 20,
-    marginVertical: 10,
+    marginBottom: 20,
     borderRadius: 10,
     backgroundColor: white,
     width: '100%',
