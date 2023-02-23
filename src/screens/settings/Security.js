@@ -19,7 +19,7 @@ const Security = ({navigation}) => {
 
   return (
     <SafeAreaView style={g_styles.container}>
-      <TopTitle title={'Security'} prevPath={'Settings'} closePath="SignIn" />
+      <TopTitle title={'Security'} closePath="SignIn" />
       <ScrollView>
         <View style={g_styles.box}>
           <ToggleItem title={'Face ID'} value={faceId} setValue={setFaceId} />
@@ -37,7 +37,7 @@ const Security = ({navigation}) => {
             <TouchableOpacity
               style={styles.submitBtn}
               onPress={() => navigation.navigate('ContactList')}>
-              <Text style={styles.submitText}>Request to Change Password</Text>
+              <Text style={styles.submitText}>Change Password</Text>
             </TouchableOpacity>
           </View>
         </View>

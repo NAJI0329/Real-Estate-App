@@ -3,7 +3,7 @@ import {white} from './colors';
 
 const g_styles = StyleSheet.create({
   container: {flex: 1, backgroundColor: white},
-  box: {paddingHorizontal: Platform.OS === 'ios' ? 10 : 16},
+  box: {paddingHorizontal: Platform.OS === 'ios' ? 12 : 16},
   flex: {flexDirection: 'row'},
   itemsCenter: {alignItems: 'center'},
   itemsStart: {alignItems: 'flex-start'},

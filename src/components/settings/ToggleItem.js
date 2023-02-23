@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, StyleSheet, Switch} from 'react-native';
+import {Text, View, StyleSheet, Switch, Platform} from 'react-native';
 import {color41, softBlack, white} from '../../ui/common/colors';
 
 const ToggleItem = ({title, value, setValue}) => {
@@ -12,6 +12,7 @@ const ToggleItem = ({title, value, setValue}) => {
         ios_backgroundColor="#3e3e3e"
         onValueChange={() => setValue(!value)}
         value={value}
+        style={{ transform: [{ scaleX: .8 }, { scaleY: .8 }] }}
       />
     </View>
   );
@@ -31,7 +32,7 @@ const styles = StyleSheet.create({
   },
   itemText: {
     color: softBlack,
-    fontSize: 16,
+    fontSize: Platform.OS === 'ios' ? 15 : 16,
     fontWeight: '500',
   },
 });

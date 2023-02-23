@@ -341,7 +341,7 @@ const App = () => {
     <MenuProvider>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName="InviteTransactionCoordinator"
+          initialRouteName="Security"
           screenOptions={{
             headerShown: false,
             presentation: 'modal',
