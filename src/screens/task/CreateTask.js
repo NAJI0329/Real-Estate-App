@@ -98,7 +98,7 @@ const CreateTask = ({navigation}) => {
         </View>
       </ScrollView>
       <MainActionButton
-        text={'Set Date'}
+        text={'Continue'}
         onPress={() => navigation.navigate('setD')}
       />
     </SafeAreaView>
