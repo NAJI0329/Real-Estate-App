@@ -341,7 +341,7 @@ const App = () => {
     <MenuProvider>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName="CreateTask"
+          initialRouteName="TaskRoom"
           screenOptions={{
             headerShown: false,
             presentation: 'modal',
