@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
-import {color39, color33, color32, white} from '../../ui/common/colors';
+import {color39, color33, color32, white, color51} from '../../ui/common/colors';
 import {Shadow} from 'react-native-shadow-2';
 import g_styles from '../../ui/common/styles';
 
@@ -13,11 +13,11 @@ const ShareFileUserItem = ({row, setSelectedUsers, selectedUsers}) => {
       flexDirection: 'row',
       alignItems: 'center',
       borderRadius: 8,
-      padding: 20,
+      padding: 16,
       width: '100%',
       position: 'relative',
-      backgroundColor: white,
-      opacity: selectedUsers.includes(row?.id) ? 1 : 0.7,
+      backgroundColor: selectedUsers.includes(row?.id) ? white : color51,
+      opacity: selectedUsers.includes(row?.id) ? 1 : 0.3,
     },
     avatar: {
       height: 48,

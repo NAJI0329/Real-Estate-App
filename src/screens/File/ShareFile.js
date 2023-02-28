@@ -3,9 +3,7 @@ import React, {useState} from 'react';
 import {
   View,
   StyleSheet,
-  ScrollView,
   Text,
-  TouchableOpacity,
   Image,
   SafeAreaView,
   FlatList,
@@ -13,8 +11,6 @@ import {
 import TopTitle from '../../components/TopTitle';
 import {color29, primaryMain, white} from '../../ui/common/colors';
 
-import {deviceHeight} from '../../ui/common/responsive';
-import FileItem from '../../components/chat/FileItem';
 import ShareFileUserItem from '../../components/file/ShareFileUserItem';
 import MainActionButton from '../../components/MainActionButton';
 import g_styles from '../../ui/common/styles';
