@@ -7,6 +7,7 @@ import {
   ScrollView,
   TextInput,
   TouchableOpacity,
+  SafeAreaView,
 } from 'react-native';
 import {
   black1,
@@ -70,10 +71,9 @@ const AddCoordinator = ({navigation}) => {
   };
 
   return (
-    <View style={g_styles.container}>
+    <SafeAreaView style={g_styles.container}>
       <TopTitle
         title="Add Coordinator"
-        prevPath={'InviteTransactionCoordinator'}
         closePath="SignIn"
       />
       <ScrollView>
@@ -204,22 +204,13 @@ const AddCoordinator = ({navigation}) => {
               />
             </View>
           </View>
-          {/* <View style={styles.submitView}>
-            <TouchableOpacity
-              style={styles.submitBtn}
-              onPress={() => {
-                navigation.navigate('ContactList');
-              }}>
-              <Text style={styles.submitText}>Create</Text>
-            </TouchableOpacity>
-          </View> */}
         </View>
       </ScrollView>
       <MainActionButton
         text={'Create'}
         onPress={() => navigation.navigate('ContactList')}
       />
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -259,7 +250,7 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     lineHeight: 20,
     marginTop: 15,
-    // marginLeft: 20,
+    marginLeft: 20,
   },
   selectBox: {
     borderRadius: 100,
@@ -268,6 +259,7 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     marginTop: 5,
     backgroundColor: white,
+    height: 50,
   },
   submitText: {
     textAlign: 'center',

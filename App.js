@@ -341,7 +341,7 @@ const App = () => {
     <MenuProvider>
       <NavigationContainer>
         <Stack.Navigator
-          initialRouteName="GroupChat"
+          initialRouteName="AddCoordinator"
           screenOptions={{
             headerShown: false,
             presentation: 'modal',
