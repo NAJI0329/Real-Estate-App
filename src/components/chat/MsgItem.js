@@ -4,12 +4,12 @@ import {View, Text, StyleSheet} from 'react-native';
 import {color34, color35, white} from '../../ui/common/colors';
 import UserAvatar from './UserAvatar';
 
-const MsgItem = ({type = 'in'}) => {
+const MsgItem = ({type = 'in', user}) => {
   return (
     <View>
       {type === 'out' ? (
         <View style={styles.inContainer}>
-          <UserAvatar online="on" />
+          <UserAvatar online="on" user={user} />
           <View style={styles.inChatContent}>
             <Text style={styles.name}>
               Rico Smith <Text style={styles.date}> 27 Jan 11:05 a.m.</Text>
@@ -27,7 +27,7 @@ const MsgItem = ({type = 'in'}) => {
             </Text>
             <Text style={styles.content}>I’m uploading them right now...</Text>
           </View>
-          <UserAvatar online="on" />
+          <UserAvatar online="on" user={user} />
         </View>
       )}
     </View>

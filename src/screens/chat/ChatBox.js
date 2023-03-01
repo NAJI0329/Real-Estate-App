@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {View, Text, Image, StyleSheet, ScrollView} from 'react-native';
+import {View, Text, Image, StyleSheet, ScrollView, SafeAreaView} from 'react-native';
 import TopTitle from '../../components/TopTitle';
 import {white, color48} from '../../ui/common/colors';
 
@@ -16,10 +16,9 @@ const user2 = require('../../../assets/images/users/2.png');
 
 const ChatBox = () => {
   return (
-    <View style={g_styles.container}>
+    <SafeAreaView style={g_styles.container}>
       <TopTitle
         title={'Individual Chat'}
-        prevPath={'TransactionRoom'}
         closePath="SignIn"
       />
       <ScrollView>
@@ -49,15 +48,15 @@ const ChatBox = () => {
           <View style={g_styles.mt_16}>
             <Text style={styles.titleText}>Chat</Text>
             <View style={g_styles.mt_20}>
-              <MsgItem type="out" />
-              <MsgItem type="in" />
+              <MsgItem type="out" user={user1} />
+              <MsgItem type="in" user={user2}/>
             </View>
           </View>
         </View>
       </ScrollView>
       <ChatInput />
       <TaskRoomBottomMenu />
-    </View>
+    </SafeAreaView>
   );
 };
 

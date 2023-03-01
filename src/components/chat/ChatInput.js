@@ -54,6 +54,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     padding: 20,
+    width: '100%',
+    flex:1,
+    marginBottom: 10
+// backgroundColor: 'red'
   },
   inputView: {
     flexDirection: 'row',
@@ -63,12 +67,15 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     paddingLeft: 20,
     paddingRight: 20,
+    height: 56,
   },
   input: {
     fontSize: 16,
     fontWeight: '400',
     lineHeight: 24,
-    width: 280,
+    marginBottom: 5,
+    width: 210
+    // width: '100%'
   },
   uploadView: {
     borderColor: primaryMain,
@@ -76,5 +83,10 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     padding: 15,
     marginLeft: 10,
+    height: 56,
+    width: 56,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
 });

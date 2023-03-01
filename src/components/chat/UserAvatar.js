@@ -4,10 +4,10 @@ import {color26} from '../../ui/common/colors';
 
 const userImg1 = require('./../../../assets/images/users/1.png');
 
-const UserAvatar = ({online = 'on'}) => {
+const UserAvatar = ({online = 'on', user}) => {
   return (
     <View style={styles.container}>
-      <Image source={userImg1} style={styles.avatar} />
+      <Image source={user || userImg1} style={styles.avatar} />
       {/* <View style={styles.onLine}></View> */}
     </View>
   );
