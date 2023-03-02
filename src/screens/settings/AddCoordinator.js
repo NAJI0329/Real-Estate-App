@@ -91,7 +91,7 @@ const AddCoordinator = ({navigation}) => {
               </TouchableOpacity>
             </View>
           </View>
-          <View style={{width: '50%', paddingLeft: 10, paddingRight: 10}}>
+            <View style={[g_styles.w_p50, g_styles.pr_10]}>
             <Text style={styles.label}>Assign Role</Text>
             <Dropdown
               open={rolesOpen}
@@ -102,8 +102,8 @@ const AddCoordinator = ({navigation}) => {
               setItems={setRolesItems}
             />
           </View>
-          <View style={{flexDirection: 'row'}}>
-            <View style={{width: '50%', paddingLeft: 10, paddingRight: 10}}>
+          <View style={g_styles.flex}>
+            <View style={[g_styles.w_p50, g_styles.pr_10]}>
               <Text style={styles.label}>First Name</Text>
               <TextInput
                 style={styles.selectBox}
@@ -111,7 +111,7 @@ const AddCoordinator = ({navigation}) => {
                 value={fullname}
               />
             </View>
-            <View style={{width: '50%', paddingLeft: 10, paddingRight: 10}}>
+            <View style={[g_styles.w_p50, g_styles.pl_10]}>
               <Text style={styles.label}>Last Name</Text>
               <TextInput
                 style={styles.selectBox}
@@ -120,7 +120,7 @@ const AddCoordinator = ({navigation}) => {
               />
             </View>
           </View>
-          <View style={{width: '100%', paddingLeft: 10, paddingRight: 10}}>
+          <View style={[g_styles.w_p100]}>
             <Text style={styles.label}>Email</Text>
             <TextInput
               style={styles.selectBox}
@@ -128,7 +128,7 @@ const AddCoordinator = ({navigation}) => {
               value={email}
             />
           </View>
-          <View style={{width: '50%', paddingLeft: 10, paddingRight: 10}}>
+            <View style={[g_styles.w_p50, g_styles.pr_10]}>
             <Text style={styles.label}>Phone</Text>
             <TextInput
               style={styles.selectBox}
@@ -136,7 +136,7 @@ const AddCoordinator = ({navigation}) => {
               value={phone}
             />
           </View>
-          <View style={{width: '100%', paddingLeft: 10, paddingRight: 10}}>
+          <View style={[g_styles.w_p100]}>
             <Text style={styles.label}>
               Addres Line #1 (Street Address, P.O Box)
             </Text>
@@ -146,7 +146,7 @@ const AddCoordinator = ({navigation}) => {
               value={address}
             />
           </View>
-          <View style={{width: '100%', paddingLeft: 10, paddingRight: 10}}>
+          <View style={[g_styles.w_p100]}>
             <Text style={styles.label}>
               Addres Line #2 (Apartment, sute, unit, building, floor, etc.)
             </Text>
@@ -156,8 +156,8 @@ const AddCoordinator = ({navigation}) => {
               value={address2}
             />
           </View>
-          <View style={{flexDirection: 'row'}}>
-            <View style={{width: '50%', paddingLeft: 10, paddingRight: 10}}>
+          <View style={[g_styles.w_p100]}>
+            <View style={[g_styles.w_p50, g_styles.pr_10]}>
               <Text style={styles.label}>City</Text>
               <Dropdown
                 open={citiesOpen}
@@ -169,7 +169,7 @@ const AddCoordinator = ({navigation}) => {
                 dropDownDirection="TOP"
               />
             </View>
-            <View style={{width: '50%', paddingLeft: 10, paddingRight: 10}}>
+            <View style={[g_styles.w_p50, g_styles.pl_10]}>
               <Text style={styles.label}>State</Text>
               <Dropdown
                 open={statesOpen}
@@ -182,8 +182,8 @@ const AddCoordinator = ({navigation}) => {
               />
             </View>
           </View>
-          <View style={{flexDirection: 'row'}}>
-            <View style={{width: '30%', paddingLeft: 10, paddingRight: 10}}>
+          <View style={g_styles.flex}>
+            <View style={[g_styles.w_p30, g_styles.pr_10]}>
               <Text style={styles.label}>Zip/Code</Text>
               <TextInput
                 style={styles.selectBox}
@@ -191,7 +191,7 @@ const AddCoordinator = ({navigation}) => {
                 value={zipCode}
               />
             </View>
-            <View style={{width: '70%', paddingLeft: 10, paddingRight: 10}}>
+            <View style={[g_styles.w_p70, g_styles.pl_10]}>
               <Text style={styles.label}>Country</Text>
               <Dropdown
                 open={countriesOpen}

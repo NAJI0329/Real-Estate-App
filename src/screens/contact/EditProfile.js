@@ -154,7 +154,7 @@ const EditProfile = ({navigation}) => {
                 dropDownDirection="TOP"
               />
             </View>
-            <View style={[g_styles.w_p50, g_styles.pl_10]}>
+            <View style={[g_styles.w_p70, g_styles.pl_10]}>
               <Text style={styles.label}>State</Text>
               <Dropdown
                 open={statesOpen}
