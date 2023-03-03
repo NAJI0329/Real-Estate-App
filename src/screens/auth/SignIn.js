@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   View,
   Text,
@@ -20,8 +20,11 @@ import LogoSection from '../../components/auth/LogoSection';
 import Input from '../../components/auth/Input';
 import RememberMe from '../../components/auth/RememberMe';
 import {isEmail} from '../../utils';
+import useAuth from '../../hooks/useAuth';
 
 const SignIn = ({navigation}) => {
+  const {checkUserValidity} = useAuth();
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({
@@ -36,6 +39,19 @@ const SignIn = ({navigation}) => {
 
     navigation.navigate('TransactionRoom');
   };
+
+  useEffect(() => {
+    async function onCheckUserValidity() {
+      const isEmailRes = isEmail(email);
+      if (isEmailRes) {
+        const res = await checkUserValidity(email);
+        console.log('___________', res);
+      }
+    }
+
+    //  Check User Validity
+    onCheckUserValidity();
+  }, [checkUserValidity, email]);
 
   const validation = () => {
     let tempErrors = {email: false, password: false};
